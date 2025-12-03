@@ -1,123 +1,317 @@
 :root {
-  --lwt-accent-color: #1d0c13 !important;
+  --s-toolbar-fg: rgb(255, 112, 141) !important;
+  --s-toolbar-bg: #000000ff !important;
+  /*custom value*/
+  --rose-quartz-foreground: #e76680;
+  --rose-quartz-background: #1d0c13;
+  --rose-quartz-background-light: #efd1de;
+
+  --lwt-accent-color: var(--rose-quartz-background) !important;
+  --lwt-accent-color-light: var(--rose-quartz-background-light) !important;
   --selected-text-background: #551234 !important;
   --toolbar-bgcolor: #2b121c !important;
   --urlbar-height: 30px !important;
   --urlbar-min-height: 30px !important;
   --urlbar-toolbar-height: 30px !important;
   --newtab-background-color: var(--rose-quartz-background) !important;
-  /*custom value*/
-  --rose-quartz-foreground: #e76680;
-  --rose-quartz-background: #110a0d;
 }
 
-#navigator-toolbox {
-  border-bottom: none !important;
+@media (prefers-color-scheme: dark) {
+  #navigator-toolbox {
+    border-bottom: none !important;
+  }
+
+  /* Toolbar icon as svg */
+  #downloads-button,
+  #PanelUI-menu-button,
+  #back-button,
+  #forward-button,
+  #stop-reload-button,
+  #home-button,
+  #sync-button,
+  #fxa-toolbar-menu-button,
+  #unified-extensions-button {
+    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
+      brightness(94%) contrast(93%) !important;
+  }
+
+  .toolbarbutton {
+    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
+      brightness(94%) contrast(93%) !important;
+  }
+  toolbar .toolbarbutton-1 {
+    color: var(--rose-quartz-foreground) !important;
+  }
+  toolbarbutton {
+    color: var(--rose-quartz-foreground) !important;
+  }
+  .titlebar-button {
+    padding: 7px 15px !important;
+  }
+  .toolbarbutton-animatable-box,
+  .toolbarbutton-1 {
+    color: var(--rose-quartz-foreground) !important;
+  }
+
+  #identity-box,
+  #tracking-protection-icon-container {
+    fill: var(--rose-quartz-foreground) !important;
+  }
+
+  #titlebar {
+    background: var(--lwt-accent-color) !important;
+  }
+
+  /* Sets the toolbar color */
+  toolbar#nav-bar {
+    background: var(--lwt-accent-color) !important;
+    box-shadow: none !important;
+    border-top: none !important;
+  }
+
+  /* Sets the URL bar color */
+  #urlbar-searchmode-switcher,
+  .searchmode-switcher-chicklet,
+  #urlbar {
+    background: var(--lwt-accent-color) !important;
+    border: none !important;
+  }
+  #urlbar-background,
+  .urlbar-background {
+    background: var(--lwt-accent-color) !important;
+    border: none !important;
+  }
+  #urlbar-input-container {
+    border: none !important;
+  }
+
+  #page-action-buttons {
+    color: var(--rose-quartz-foreground) !important;
+    fill: var(--rose-quartz-foreground) !important;
+  }
+
+  /* open in container color*/
+  :root[lwt-toolbar-field-brighttext]
+    #urlbar:not([focused="true"])
+    .urlbar-addon-page-action[style*=".svg"]
+    > .urlbar-icon,
+  :root[lwt-toolbar-field-focus-brighttext]
+    #urlbar[focused="true"]
+    .urlbar-addon-page-action[style*=".svg"]
+    > .urlbar-icon {
+    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
+      brightness(94%) contrast(93%) !important;
+  }
+  .urlbar-icon {
+    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
+      brightness(94%) contrast(93%) !important;
+  }
+
+  /* saved bookmarks icon */
+  #star-button[starred] {
+    fill-opacity: 1;
+    fill: var(--rose-quartz-foreground) !important;
+  }
+
+  /* search bar*/
+  .urlbarView-row:hover > .urlbarView-row-inner {
+    background-color: var(--selected-text-background) !important;
+  }
+  .urlbarView-row:not([type="tip"], [type="dynamic"])[selected]
+    > .urlbarView-row-inner,
+  .urlbarView-row-inner[selected] {
+    background-color: var(--selected-text-background) !important;
+  }
+
+  ::selection {
+    color: White !important;
+    background: var(--selected-text-background) !important;
+  }
+
+  /* Sideberry */
+  #root.root {
+    --toolbar-bg: #000000ff;
+  }
+  #root.root {
+    --toolbar-fg: rgb(255, 112, 141);
+  }
+
+  #root.root {
+    --toolbar-el-overlay-active-bg: #808080ff;
+  }
+
+  #root.root {
+    --frame-bg: #12070cff;
+  }
+  #root.root {
+    --toolbar-bgcolor: #2b121c;
+  }
+
+  #root.root {
+    --bookmarks-expanded-folder-bg: 110a0d;
+  }
+  #root.root {
+    --popup-bg: #110a0d;
+  }
+  #root.root {
+    --tabs-activated-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.282),
+      inset 0 0 0 1px rgb(182, 141, 150);
+  }
+  #root.root {
+    --tabs-activated-bg: rgb(29, 12, 19);
+  }
+
+  #root.root {
+    --frame-fg: rgb(255, 112, 141);
+  }
 }
 
-/* Toolbar icon as svg */
-#downloads-button,
-#PanelUI-menu-button,
-#back-button,
-#forward-button,
-#stop-reload-button,
-#home-button,
-#sync-button,
-#fxa-toolbar-menu-button,
-#unified-extensions-button {
-  filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
-    brightness(94%) contrast(93%) !important;
-}
+@media (prefers-color-scheme: light) {
+  #navigator-toolbox {
+    border-bottom: none !important;
+  }
 
-.toolbarbutton {
-  filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
-    brightness(94%) contrast(93%) !important;
-}
-toolbar .toolbarbutton-1 {
-  color: var(--rose-quartz-foreground) !important;
-}
-toolbarbutton {
-  color: var(--rose-quartz-foreground) !important;
-}
-.titlebar-button {
-  padding: 7px 15px !important;
-}
-.toolbarbutton-animatable-box,
-.toolbarbutton-1 {
-  color: var(--rose-quartz-foreground) !important;
-}
+  /* Toolbar icon as svg */
+  #downloads-button,
+  #PanelUI-menu-button,
+  #back-button,
+  #forward-button,
+  #stop-reload-button,
+  #home-button,
+  #sync-button,
+  #fxa-toolbar-menu-button,
+  #unified-extensions-button {
+    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
+      brightness(94%) contrast(93%) !important;
+  }
 
-#identity-box,
-#tracking-protection-icon-container {
-  fill: var(--rose-quartz-foreground) !important;
-}
+  .toolbarbutton {
+    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
+      brightness(94%) contrast(93%) !important;
+  }
+  toolbar .toolbarbutton-1 {
+    color: var(--rose-quartz-foreground) !important;
+  }
+  toolbarbutton {
+    color: var(--rose-quartz-foreground) !important;
+  }
+  .titlebar-button {
+    padding: 7px 15px !important;
+  }
+  .toolbarbutton-animatable-box,
+  .toolbarbutton-1 {
+    color: var(--rose-quartz-foreground) !important;
+  }
 
-#titlebar {
-  background: var(--lwt-accent-color) !important;
-}
+  #identity-box,
+  #tracking-protection-icon-container {
+    fill: var(--rose-quartz-foreground) !important;
+  }
 
-/* Sets the toolbar color */
-toolbar#nav-bar {
-  background: var(--lwt-accent-color) !important;
-  box-shadow: none !important;
-  border-top: none !important;
-}
+  #titlebar {
+    background: var(--lwt-accent-color-light) !important;
+  }
 
-/* Sets the URL bar color */
-#urlbar-searchmode-switcher,
-.searchmode-switcher-chicklet,
-#urlbar {
-  background: var(--lwt-accent-color) !important;
-  border: none !important;
-}
-#urlbar-background,
-.urlbar-background {
-  background: var(--lwt-accent-color) !important;
-  border: none !important;
-}
-#urlbar-input-container {
-  border: none !important;
-}
+  /* Sets the toolbar color */
+  toolbar#nav-bar {
+    background: var(--lwt-accent-color-light) !important;
+    box-shadow: none !important;
+    border-top: none !important;
+  }
 
-#page-action-buttons {
-  color: var(--rose-quartz-foreground) !important;
-  fill: var(--rose-quartz-foreground) !important;
-}
+  /* Sets the URL bar color */
+  #urlbar-searchmode-switcher,
+  .searchmode-switcher-chicklet,
+  #urlbar {
+    background: var(--lwt-accent-color-light) !important;
+    border: none !important;
+  }
+  #urlbar-background,
+  .urlbar-background {
+    background: var(--lwt-accent-color-light) !important;
+    border: none !important;
+  }
+  #urlbar-input-container {
+    border: none !important;
+  }
 
-/* open in container color*/
-:root[lwt-toolbar-field-brighttext]
-  #urlbar:not([focused="true"])
-  .urlbar-addon-page-action[style*=".svg"]
-  > .urlbar-icon,
-:root[lwt-toolbar-field-focus-brighttext]
-  #urlbar[focused="true"]
-  .urlbar-addon-page-action[style*=".svg"]
-  > .urlbar-icon {
-  filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
-    brightness(94%) contrast(93%) !important;
-}
-.urlbar-icon {
-  filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
-    brightness(94%) contrast(93%) !important;
-}
+  #page-action-buttons {
+    color: var(--rose-quartz-foreground) !important;
+    fill: var(--rose-quartz-foreground) !important;
+  }
 
-/* saved bookmarks icon */
-#star-button[starred] {
-  fill-opacity: 1;
-  fill: var(--rose-quartz-foreground) !important;
-}
+  /* open in container color*/
+  :root[lwt-toolbar-field-brighttext]
+    #urlbar:not([focused="true"])
+    .urlbar-addon-page-action[style*=".svg"]
+    > .urlbar-icon,
+  :root[lwt-toolbar-field-focus-brighttext]
+    #urlbar[focused="true"]
+    .urlbar-addon-page-action[style*=".svg"]
+    > .urlbar-icon {
+    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
+      brightness(94%) contrast(93%) !important;
+  }
+  .urlbar-icon {
+    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
+      brightness(94%) contrast(93%) !important;
+  }
 
-/* search bar*/
-.urlbarView-row:hover > .urlbarView-row-inner {
-  background-color: var(--selected-text-background) !important;
-}
-.urlbarView-row:not([type="tip"], [type="dynamic"])[selected]
-  > .urlbarView-row-inner,
-.urlbarView-row-inner[selected] {
-  background-color: var(--selected-text-background) !important;
-}
+  /* saved bookmarks icon */
+  #star-button[starred] {
+    fill-opacity: 1;
+    fill: var(--rose-quartz-foreground) !important;
+  }
 
-::selection {
-  color: White !important;
-  background: var(--selected-text-background) !important;
+  /* search bar*/
+  .urlbarView-row:hover > .urlbarView-row-inner {
+    background-color: var(--selected-text-background) !important;
+  }
+  .urlbarView-row:not([type="tip"], [type="dynamic"])[selected]
+    > .urlbarView-row-inner,
+  .urlbarView-row-inner[selected] {
+    background-color: var(--selected-text-background) !important;
+  }
+
+  ::selection {
+    color: White !important;
+    background: var(--selected-text-background) !important;
+  }
+
+  /* Sideberry */
+  #root.root {
+    --toolbar-bg: var(--lwt-accent-color-light);
+  }
+  #root.root {
+    --toolbar-fg: rgb(255, 112, 141);
+  }
+
+  #root.root {
+    --toolbar-el-overlay-active-bg: #808080ff;
+  }
+
+  #root.root {
+    --frame-bg: var(--lwt-accent-color-light);
+  }
+  #root.root {
+    --toolbar-bgcolor: var(--lwt-accent-color-light);
+  }
+
+  #root.root {
+    --bookmarks-expanded-folder-bg: 110a0d;
+  }
+  #root.root {
+    --popup-bg: var(--lwt-accent-color-light);
+  }
+  #root.root {
+    --tabs-activated-shadow: 0 1px 4px -1px rgba(0, 0, 0, 0.282),
+      inset 0 0 0 1px rgb(182, 141, 150);
+  }
+  #root.root {
+    --tabs-activated-bg: rgb(29, 12, 19);
+  }
+
+  #root.root {
+    --frame-fg: rgb(255, 112, 141);
+  }
 }

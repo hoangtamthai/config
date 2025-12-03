@@ -14,11 +14,15 @@ user_pref("network.buffer.cache.count", 128); // default=24
 // DNS
 user_pref(
   "network.trr.uri",
-  "https://adguard.thtam.freemyip.com:4433/dns-query/thtam-laptop"
+  "https://adguard.tamthai.de/dns-query/thtam-laptop"
 );
+// user_pref(
+//   "network.trr.custom_uri",
+//   "https://adguard.thtam.freemyip.com:4433/dns-query/thtam-laptop"
+// );
 user_pref(
   "network.trr.custom_uri",
-  "https://adguard.thtam.freemyip.com:4433/dns-query/thtam-laptop"
+  "https://adguard.tamthai.de/dns-query/thtam-laptop"
 );
 user_pref("network.trr.mode", 3); // most secure only through defined DNS
 
@@ -369,7 +373,7 @@ user_pref("browser.uitour.enabled", false);
 // user_pref("browser.uitour.url", ""); // Defense-in-depth
 /* 2608: reset remote debugging to disabled
  * [1] https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/16222 ***/
-user_pref("devtools.debugger.remote-enabled", false); // [DEFAULT: false]
+user_pref("devtools.debugger.remote-enabled", true); // [DEFAULT: false]
 /* 2615: disable websites overriding Firefox's keyboard shortcuts [FF58+]
  * 0 (default) or 1=allow, 2=block
  * [SETTING] to add site exceptions: Ctrl+I>Permissions>Override Keyboard Shortcuts ***/
