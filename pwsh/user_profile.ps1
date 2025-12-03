@@ -7,9 +7,9 @@ Set-Alias which where.exe
 function ln ($target, $link) {
     New-Item -ItemType SymbolicLink -Path $link -Value $target
 }
-function sudo ($command) { 
-    Start-Process pwsh "-noe -c $command" -Verb Runas
-}
+# function sudo ($command) {
+#     Start-Process pwsh "-noe -c $command" -Verb Runas
+# }
 function rename ($target, $link) {
     Rename-Item $target $link
 }
