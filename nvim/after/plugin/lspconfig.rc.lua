@@ -1,6 +1,7 @@
-local status, lspconfig = pcall(require, "lspconfig")
+local status, lspconfig = pcall("vim.lsp.config")
 if (not status) then return end
 
+-- vim.lsp.config()
 local protocol = require('vim.lsp.protocol')
 
 -- Use an on_attach function to only map the following keys
