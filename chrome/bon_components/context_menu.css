@@ -1,6 +1,11 @@
 .menupopup-arrowscrollbox {
   background-color: var(--lwt-accent-color) !important;
+  color: var(--rose-quartz-foreground);
   border-radius: 0px !important;
+}
+
+#ContentSelectDropdownPopup > menuitem {
+  color: var(--rose-quartz-foreground) !important;
 }
 
 #context-navigation > menuitem[_moz-menuactive="true"]:not([disabled]) {
