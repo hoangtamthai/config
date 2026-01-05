@@ -1,22 +1,35 @@
-;; Define the source keys you want to intercept
 (defsrc
-  caps h j k l ralt
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet rctl
 )
 
-;; Create an alias for the Tap-Hold behavior
+(defvar
+  tt  80 ;;tap-timeout
+  ht  80 ;;hold-timeout
+)
 ;; (tap-hold <timeout-tap> <timeout-hold> <on-tap> <on-hold>)
 ;; (layer-while-held <layer>)
 (defalias
-  caps_mod (tap-hold-press 10 80 esc lctl)
-
-  vim_mod (layer-while-held vim)
+  cap (tap-hold-press $tt $ht esc lctl)
+  vim (layer-while-held vim)
 )
 
 ;; Map the physical key to the alias
 (deflayer base
-  @caps_mod h j k l @vim_mod
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @cap a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            @vim rmet rctl
 )
 
 (deflayer vim
-  _ left down up right _
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @cap a    s    d    f    g    left down up  right ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            @vim rmet rctl
 )
