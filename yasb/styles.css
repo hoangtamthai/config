@@ -266,14 +266,8 @@
 }
 
 /* Volume */
-.volume-widget .icon {
-}
 .volume-slider {
   padding: 8px;
-}
-.volume-slider::groove {
-}
-.volume-slider::handle {
 }
 .audio-menu {
   background-color: var(--bg-primary);
@@ -290,8 +284,6 @@
 }
 .audio-container .device:hover {
   background-color: var(--bg-hover-primary);
-}
-.volume-widget .progress-circle {
 }
 
 /* Power Menu */
@@ -343,18 +335,12 @@
 }
 
 /* Traffic */
-.traffic-widget {
-}
 .traffic-widget .icon.offline {
   color: var(--color-red);
 }
 .traffic-menu {
   background-color: var(--bg-primary);
   min-width: 320px;
-}
-.traffic-menu .header {
-  /* border-bottom: 1px solid red; */
-  /* background-color: rgba(24, 25, 27, 0.8); */
 }
 .traffic-menu .header .title {
   padding: 14px;
@@ -373,8 +359,6 @@
   color: #ffffff;
   background-color: var(--bg-hover-primary);
   border: 1px solid var(--color-grey);
-}
-.traffic-menu .reset-button:pressed {
 }
 /* Speed column styles */
 .traffic-menu .download-speed,
@@ -453,8 +437,6 @@
   color: var(--text-secondary);
   padding: 8px 0;
   font-family: var(--font-name-primary);
-}
-.traffic-menu .internet-info {
 }
 .traffic-menu .internet-info.connected {
   background-color: var(--color-dark-green);
@@ -747,10 +729,6 @@
 .todo-menu .header .tab-buttons.sort:pressed {
   background-color: #1d0c13;
 }
-.todo-menu .no-tasks {
-}
-.todo-menu .no-tasks-icon {
-}
 /* todo-menu task item styles */
 .todo-menu .task-item {
   margin: var(--margin-sm);
@@ -760,8 +738,6 @@
 }
 .todo-menu .task-item:hover {
   background-color: var(--bg-hover-primary);
-}
-.todo-menu .task-item.expanded {
 }
 /* todo-menu task item styles based on category */
 .todo-menu .task-item.important {
@@ -858,10 +834,6 @@
 }
 .todo-menu .app-dialog .button:hover {
   background-color: var(--bg-hover-primary);
-}
-.todo-menu .app-dialog .button.add {
-}
-.todo-menu .app-dialog .warning-message {
 }
 .todo-menu .app-dialog .category-button {
   padding: var(--sm);
