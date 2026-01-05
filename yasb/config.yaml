@@ -197,9 +197,9 @@ widgets:
       hide_on_break: false
       session_target: 8
       icons:
-        work: "\uf013"          #
+        work: "\udb81\udd1f"    #󰔟
+        paused: "\udb86\udda0"  #󱦠
         break: "\uf102"         #
-        paused: "\udb86\udd33"  #󱤳
       menu:
         blur: true
         round_corners: true
@@ -246,11 +246,11 @@ widgets:
         no_tasks: "\uf4a0"
       categories:
         default:
-          label: "General"
+          label: "Default"
         soon:
-          label: "Complete soon"
+          label: "Soon"
         today:
-          label: "End of day"
+          label: "Today"
         urgent:
           label: "Urgent"
         important:
