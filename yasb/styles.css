@@ -1,8 +1,8 @@
 :root {
-  --font-name-primary: "RobotoMono Nerd Font"
-  --font-name-secondary: "RobotoMono Nerd Font";
+  --font-name-primary: "RobotoMono Nerd Font";
   --text-primary: #ecafc9;
-  --text-secondary:#ecafc9;
+  --text-secondary: rgba(218, 162, 186, 0.5);
+  --text-xs: 10px;
   --text-small: 12px;
   --text-normal: 14px;
   --text-lg: 16px;
@@ -16,16 +16,17 @@
   --font-bold-xl: 900;
   --bg-taskbar: #1d0c13;
   --bg-primary: #1d0c13;
-  --bg-secondary: #1d0c13;
-  --bg-hover-primary: rgba(255, 255, 255, 0.08);
-  --bg-hover-secondary: rgba(255, 255, 255, 0.04);
+  --bg-secondary: rgba(28, 13, 20, 0.9);
+  --bg-transparent: rgba(28, 13, 20, 0.2);
+  --bg-hover-primary: rgba(236, 175, 201, 0.2);
+  --bg-hover-secondary: rgba(255, 255, 255, 0.1);
   --bg-hover-third: rgba(255, 255, 255, 0.12);
   --bg-hover-fourth: rgba(24, 24, 37, 0.212);
-  --bg-hover-primary: #1d0c13;
   --color-grey: rgba(128, 130, 158, 0.3);
   --color-dark-grey: hsla(236, 13%, 36%, 0.3);
   --color-light-grey: rgba(186, 187, 202, 0.3);
-  --color-yellow: #fae93f;
+  --color-yellow: #d1c21c;
+  --color-dark-yellow: #5b5516;
   --color-green: #3f925f;
   --color-dark-green: #223a2c;
   --color-light-green: #61ad7e;
@@ -33,18 +34,25 @@
   --color-dark-red: #5a1e22;
   --color-light-red: #e04c52;
   --color-light-blue: rgb(112, 157, 255);
+  --color-dark-blue: rgb(36, 52, 85);
   --radius-normal: 8px;
   --radius-xl: 20px;
-  --padding-normal: 0 8px;
+  --padding-normal: 0 4px;
   --margin-small: 2px 0;
+  --margin-sm: 4px 8px;
   --margin-normal: 8px;
   --margin-lg: 12px;
-  --padding-label: 0px 2px 2px 2px;
+  --margin-widget: 2px 0;
+  --margin-icon: 0px 2px 0px 2px;
+  --padding-label: 2px;
+  --padding-icon: 0px 0px 0px 0px;
   --padding-menu: 12px 84px 12px 14px;
   --padding-volume: 12px 14px;
   --padding-button: 4px 8px;
-  --margin-widget: 4px 0;
   --padding-tooltip: 12px 24px;
+  --sm: 4px;
+  --md: 8px;
+  --lg: 12px;
 }
 
 * {
@@ -54,6 +62,24 @@
   font-family: var(--font-name-primary);
   margin: 0;
   padding: 0;
+}
+
+/* Context */
+.context-menu::item {
+  background-color: var(--bg-hover-primary);
+}
+.context-menu .menu-checkbox:hover {
+  background-color: var(--bg-hover-primary);
+}
+
+/* General */
+.icon {
+  font-size: var(--text-normal);
+  padding: var(--padding-icon);
+  margin: var(--margin-icon);
+}
+.label {
+  font-size: var(--text-normal);
 }
 .yasb-bar {
   padding: var(--padding-normal);
@@ -72,12 +98,6 @@
   padding: var(--padding-label);
   font-family: var(--font-name-primary);
 }
-.widget .label.alt {
-}
-.icon {
-  font-size: var(--text-lg);
-  padding-right: 1px;
-}
 
 /* Tooltip */
 .tooltip {
@@ -92,11 +112,6 @@
 }
 
 /* Home */
-.home-widget {
-}
-.home-widget .icon {
-  font-size: var(--text-lg);
-}
 .home-menu {
   background-color: var(--bg-primary);
 }
@@ -114,18 +129,33 @@
 }
 
 /* Weather */
-.weather-widget .icon {
-  margin: 0 2px 0 0;
-}
-.weather-widget .icon.sunnyDay {
+.weather-widget .icon.sunnyDay,
+.weather-widget .icon.cloudyDay,
+.weather-widget .icon.rainyDay,
+.weather-widget .icon.snowyDay,
+.weather-widget .icon.snowyIcyDay,
+.weather-widget .icon.blizzardDay,
+.weather-widget .icon.foggyDay,
+.weather-widget .icon.thunderstormDay {
   color: var(--color-yellow);
 }
-.weather-widget .icon.clearNight {
+.weather-widget .icon.sunnyNight,
+.weather-widget .icon.cloudyNight,
+.weather-widget .icon.rainyNight,
+.weather-widget .icon.snowyNight,
+.weather-widget .icon.snowyIcyNight,
+.weather-widget .icon.blizzardNight,
+.weather-widget .icon.foggyNight,
+.weather-widget .icon.thunderstormDay {
   color: var(--color-light-blue);
 }
+.weather-widget .label.alt {
+  font-size: var(--text-xs);
+}
+
 /* Weather Card */
 .weather-card {
-  background-color: var(--bg-primary);
+  background-color: var(--bg-transparent);
 }
 .weather-card-today .label {
   font-size: var(--text-normal);
@@ -145,30 +175,45 @@
 .weather-card-day {
   border-radius: var(--radius-normal);
 }
-
 .weather-card-day.active {
   background-color: var(--bg-hover-secondary);
   border: 1px solid var(--color-grey);
 }
-
 .weather-card-day:hover {
   background-color: var(--bg-hover-primary);
 }
-
 .weather-card-day .label {
   font-size: var(--text-normal);
 }
-
 .weather-card .hourly-container {
   border-radius: var(--radius-normal);
   min-height: 150px;
   background-color: transparent;
 }
-
 .weather-card .hourly-data {
-  background-color: var(--color-yellow); /* <- Curve color */
+  background-color: var(--color-yellow);
   font-size: var(--text-normal);
   font-weight: var(--font-bold);
+}
+
+/* Pomodoro */
+.pomodoro-menu {
+  background-color: var(--bg-transparent);
+}
+.pomodoro-menu .button {
+  padding: var(--padding-button);
+}
+.pomodoro-menu .button.start {
+  background-color: var(--color-dark-green);
+}
+.pomodoro-menu .button.pause {
+  background-color: var(--color-dark-yellow);
+}
+.pomodoro-menu .button.reset {
+  background-color: var(--color-dark-red);
+}
+.pomodoro-menu .button:hover {
+  background-color: var(--bg-hover-primary);
 }
 
 /* Clock */
@@ -255,8 +300,6 @@
   margin-bottom: 45px;
   color: var(--text-primary);
   font-weight: var(--font-bold);
-}
-.power-menu-widget .label {
 }
 .power-menu-popup {
   background-color: var(--bg-hover-fourth);
@@ -474,7 +517,6 @@
 .systray:hover {
   background: transparent;
 }
-
 .systray .unpinned-container {
   border-radius: 0;
   /* background-color: transparent; */
@@ -483,37 +525,25 @@
   border-right: 1px solid var(--text-secondary);
   /* background-color: var(--bg-hover-primary); */
 }
-
 .systray .pinned-container {
   padding: 0 4px;
 }
-
 .systray .pinned-container:hover {
   background: transparent;
 }
-
-.systray .pinned-container[forceshow="true"] {
-}
-
 .systray .button {
   padding: 0px 4px;
   border-radius: var(--radius-normal);
   padding: 6px 6px;
   outline: none;
 }
-
-.systray .button .icon {
-}
-
 .systray .button:hover {
   background-color: var(--bg-hover-primary);
 }
-
 .systray .button[dragging="true"] {
   background-color: var(--bg-hover-primary);
   border-color: var(--color-green);
 }
-
 .systray .unpinned-visibility-btn {
   border-radius: 0px;
   height: 20px;
@@ -521,23 +551,15 @@
   outline: none;
 }
 
-.systray .unpinned-visibility-btn:checked {
-}
-
-.systray .unpinned-visibility-btn:hover {
-}
-
 /* Media */
 .media-widget {
-  /* padding: 0; */
   margin: 4px 4px;
-  padding: 0 8px;
+  padding: var(--padding-normal);
   border-radius: var(--radius-normal);
-  background-color: var(--bg-hover-secondary);
 }
 .media-widget .label {
   color: var(--text-primary);
-  padding: 2px 10px;
+  padding: 2px 10pxs;
   padding-right: 4px;
   font-size: var(--text-normal);
 }
@@ -547,14 +569,14 @@
   margin: 0;
   font-family: var(--font-name-primary);
   font-weight: var(--font-normal);
-  font-size: var(--text-2xl);
+  font-size: var(--text-lg);
 }
 .media-widget .btn:hover {
   color: var(--text-primary);
   background-color: var(--bg-hover-third);
 }
 .media-widget .btn.play {
-  font-size: var(--text-3xl);
+  font-size: var(--text-xl);
 }
 .media-widget .btn.disabled:hover,
 .media-widget .btn.disabled {
@@ -562,6 +584,7 @@
   font-size: var(--text-normal);
 }
 
+/* Media Menu */
 .media-menu {
   min-width: 320px;
   max-width: 320px;
@@ -620,7 +643,6 @@
   color: var(--color-light-grey);
   background-color: transparent;
 }
-
 .media-menu .playback-time {
   font-size: var(--text-normal);
   font-family: var(--font-name-primary);
@@ -650,7 +672,6 @@
   border-radius: 3px;
   height: 4px;
 }
-
 .media-menu .app-volume-container {
   background-color: var(--bg-hover-primary);
   padding: 8px 6px;
@@ -684,4 +705,182 @@
 }
 .media-menu .app-volume-container .unmute-button {
   color: var(--text-secondary);
+}
+
+/* Todo */
+.todo-menu {
+  background-color: var(--bg-transparent);
+  min-width: 400px;
+  max-width: 400px;
+  font-family: var(--font-name-primary);
+}
+.todo-menu .header {
+  margin: var(--margin-normal);
+}
+.todo-menu .header .add-task-button {
+  padding: var(--padding-button);
+}
+.todo-menu .header .add-task-button:hover {
+  background-color: var(--bg-hover-primary);
+}
+.todo-menu .header .tab-buttons {
+  padding: var(--padding-button);
+}
+.todo-menu .header .tab-buttons:hover {
+  background-color: var(--bg-hover-primary);
+}
+.todo-menu .header .tab-buttons.in-progress {
+  color: var(--color-light-green);
+}
+.todo-menu .header .tab-buttons.completed {
+  color: var(--color-yellow);
+}
+.todo-menu .header .tab-buttons.in-progress:checked {
+  background-color: var(--bg-primary);
+}
+.todo-menu .header .tab-buttons.completed:checked {
+  background-color: var(--bg-primary);
+}
+.todo-menu .header .tab-buttons.sort:hover {
+  background-color: var(--bg-hover-primary);
+}
+.todo-menu .header .tab-buttons.sort:pressed {
+  background-color: #1d0c13;
+}
+.todo-menu .no-tasks {
+}
+.todo-menu .no-tasks-icon {
+}
+/* todo-menu task item styles */
+.todo-menu .task-item {
+  margin: var(--margin-sm);
+  padding: var(--md);
+  border: 1px solid var(--text-primary);
+  border-radius: var(--radius-normal);
+}
+.todo-menu .task-item:hover {
+  background-color: var(--bg-hover-primary);
+}
+.todo-menu .task-item.expanded {
+}
+/* todo-menu task item styles based on category */
+.todo-menu .task-item.important {
+  border: 1px solid var(--color-light-red);
+}
+.todo-menu .task-item.urgent {
+  border: 1px solid var(--color-yellow);
+}
+.todo-menu .task-item.soon {
+  border: 1px solid var(--color-light-green);
+}
+.todo-menu .task-item.today {
+  border: 1px solid var(--color-light-blue);
+}
+.todo-menu .task-checkbox {
+  padding: var(--padding-normal);
+  margin-right: var(--md);
+  background-color: transparent;
+  border: none;
+}
+.todo-menu .task-info-row .date-icon {
+  margin: 0 var(--sm);
+}
+.todo-menu .task-info-row .category-icon {
+  margin: 0 var(--sm);
+}
+.todo-menu .task-info-row .category-text.important {
+  color: var(--color-light-red);
+}
+.todo-menu .task-info-row .category-icon.important {
+  color: var(--color-light-red);
+}
+.todo-menu .task-info-row .category-text.urgent {
+  color: var(--color-yellow);
+}
+.todo-menu .task-info-row .category-icon.urgent {
+  color: var(--color-yellow);
+}
+.todo-menu .task-info-row .category-text.soon {
+  color: var(--color-light-green);
+}
+.todo-menu .task-info-row .category-icon.soon {
+  color: var(--color-light-green);
+}
+.todo-menu .task-info-row .category-text.today {
+  color: var(--color-light-blue);
+}
+.todo-menu .task-info-row .category-icon.today {
+  color: var(--color-light-blue);
+}
+.todo-menu .task-info-row .edit-task-button {
+  padding: var(--padding-button);
+}
+.todo-menu .task-info-row .edit-task-button:hover {
+  padding: var(--padding-button);
+  background-color: var(--bg-hover-primary);
+}
+.todo-menu .task-info-row .delete-task-button {
+  padding: var(--padding-button);
+  background-color: var(--color-dark-red);
+}
+.todo-menu .task-info-row .delete-task-button:hover {
+  padding: var(--padding-button);
+  background-color: var(--color-light-red);
+}
+/* todo-menu dialog styles */
+.todo-menu .app-dialog {
+  background-color: var(--bg-transparent);
+}
+.todo-menu .app-dialog .buttons-container {
+  background-color: var(--bg-transparent);
+}
+.todo-menu .app-dialog .title-field {
+  background-color: var(--bg-transparent);
+}
+.todo-menu .app-dialog .desc-field {
+  background-color: var(--bg-transparent);
+}
+.todo-menu .app-dialog .title-field:focus {
+  background-color: var(--bg-transparent);
+  border: 1px solid var(--text-primary);
+  border-radius: var(--radius-normal);
+}
+.todo-menu .app-dialog .desc-field:focus {
+  background-color: var(--bg-transparent);
+  border: 1px solid var(--text-primary);
+  border-radius: var(--radius-normal);
+}
+.todo-menu .app-dialog .buttons-container .button {
+  padding: var(--padding-button);
+}
+.todo-menu .app-dialog .button {
+  padding: var(--padding-button);
+}
+.todo-menu .app-dialog .button:hover {
+  background-color: var(--bg-hover-primary);
+}
+.todo-menu .app-dialog .button.add {
+}
+.todo-menu .app-dialog .warning-message {
+}
+.todo-menu .app-dialog .category-button {
+  padding: var(--sm);
+}
+.todo-menu .app-dialog .category-button:hover {
+  background-color: var(--bg-hover-primary);
+}
+.todo-menu .app-dialog .category-button:checked {
+  background-color: var(--bg-primary);
+}
+.todo-menu .app-dialog .category-button.urgent {
+  color: var(--color-yellow);
+}
+.todo-menu .app-dialog .category-button.soon {
+  color: var(--color-light-green);
+}
+.todo-menu .app-dialog .category-button.today {
+  color: var(--color-light-blue);
+}
+.todo-menu .app-dialog .category-button.important {
+  color: var(--color-light-red);
 }

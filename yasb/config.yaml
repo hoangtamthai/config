@@ -1,14 +1,17 @@
-watch_stylesheet: true
-watch_config: true
+watch_stylesheet: false
+watch_config: false
 debug: false
+show_systray: false
+update_check: false
+
 bars:
-  status-bar:
+  status:
     enabled: true
     screens: ["*"]
     class_name: "yasb-bar"
     alignment:
       position: "top"
-      center: false
+      center: true
     blur_effect:
       enabled: false
       acrylic: false
@@ -20,7 +23,7 @@ bars:
       windows_app_bar: true
     dimensions:
       width: "100%"
-      height: 35
+      height: 32
     widgets:
       left: ["home", "power_menu", "weather", "media", "pomodoro", "todo"]
       center: ["taskbar"]
@@ -39,7 +42,7 @@ widgets:
   home:
     type: "yasb.home.HomeWidget"
     options:
-      label: "<span style='flex:auto'>\ue62a</span>" # \udb80\udf5c
+      label: "\ue8e5"
       menu_labels:
         about: "\ue66A  About This PC"
         system: "\uF423  System Settings"
@@ -69,20 +72,19 @@ widgets:
       blur: False
       blur_background: True
       animation_duration: 300 # Milisecond
-      button_row: 3 # Number of buttons in row, min 1 max 5
+      button_row: 5 # Number of buttons in row, min 1 max 5
       buttons:
-        lock: ["\uea75", "Lock"]
-        signout: ["\udb80\udf43", "Sign out"]
-        shutdown: ["\uf011", "Shut Down"]
+        lock: ["\uf023", "Lock"] #
+        signout: ["\uf08b", "Sign out"] # 
+        shutdown: ["\uf011", "Shut Down"] # 
         restart: ["\uead2", "Restart"]
-        hibernate: ["\uf28e", "Hibernate"]
         cancel: ["\udb81\udf3a", "Cancel"]
 
   weather:
     type: "yasb.weather.WeatherWidget"
     options:
       label: "<span>{icon}</span> {temp}"
-      label_alt: "<span>{icon}</span> {location}: {temp}, L {min_temp}, Max {max_temp}, Wind {wind}"
+      label_alt: "{icon} {location}: {temp}, L {min_temp}, Max {max_temp}, Wind {wind}"
       api_key: "3bf4cf9a7c3f40d6b31174128242807" # Get your free API key from https://www.weatherapi.com/
       update_interval: 3600 # Update interval in seconds, Min 600 seconds
       hide_decimal: true
@@ -94,30 +96,21 @@ widgets:
       icons:
         sunnyDay: "\ue30d"
         clearNight: "\uf4ee"
-        cloudyDay: "\udb81\udd99"
-        cloudyNight: "\ue311"
-        rainyDay: "\udb81\ude7e"
-        rainyNight: "\udb81\ude7e"
-        snowyIcyDay: "\udb81\udd98"
-        snowyIcyNight: "\udb81\udd98"
-        blizzardDay: "\uebaa"
+        cloudyDay: "\uf0c2"             #
+        cloudyNight: "\ue226"           #
+        rainyDay: "\uef1e"              #
+        rainyNight: "\uef1b"            #
+        snowyDay: "\ue35f"              #
+        snowyIcyDay: "\ue35f"           #
+        snowyNight: "\ue327"            #
+        snowyIcyNight: "\ue327"         #
+        blizzardDay: "\uf2dc"           #
+        blizzardNight: "\uf2dc"         #
+        foggyDay: "\ue303"              #
+        foggyNight: "\ue346"            #
+        thunderstormDay: "\ue30e"       #
+        thunderstormNight: "\ue329"     #
         default: "\uebaa"
-      # icons:
-      #   sunnyDay: "☀️"
-      #   clearNight: "🌙"
-      #   cloudyDay: "⛅"
-      #   cloudyNight: "️☁️"
-      #   rainyDay: "🌦️"
-      #   rainyNight: "🌧️"
-      #   snowyIcyDay: "❄️"
-      #   snowyIcyNight: "🌨️"
-      #   blizzardDay: "\ue362" #
-      #   blizzardNight: "\ue31c" #
-      #   foggyDay: "🌫️"
-      #   foggyNight: "😶‍🌫️"
-      #   thunderstormDay: "🌩️"
-      #   thunderstormNight: "⛈️"
-      #   default: \uebaa"
       weather_card:
         blur: true
         round_corners: true
@@ -191,11 +184,11 @@ widgets:
   pomodoro:
     type: "yasb.pomodoro.PomodoroWidget"
     options:
-      label: "<span>{icon}</span> {remaining}"
-      label_alt: "<span>{icon}</span> {session}/{total_sessions} - {status}"
+      label: "{icon} {remaining}"
+      label_alt: "{icon} {session}/{total_sessions} - {status}"
       work_duration: 25
       break_duration: 5
-      long_break_duration: 15
+      long_break_duration: 20
       long_break_interval: 4
       auto_start_breaks: true
       auto_start_work: true
@@ -204,20 +197,20 @@ widgets:
       hide_on_break: false
       session_target: 8
       icons:
-        work: "\uf252"
-        break: "\uf253"
-        paused: "\uf254"
+        work: "\uf013"          #
+        break: "\uf102"         #
+        paused: "\udb86\udd33"  #󱤳
       menu:
         blur: true
         round_corners: true
         round_corners_type: "normal"
         border_color: "System"
-        alignment: "right"
+        alignment: "center"
         direction: "down"
         offset_top: 6
         offset_left: 0
-        circle_background_color: "#09ffffff"
-        circle_work_progress_color: "#88c0d0"
+        circle_background_color: "#1d0c13"
+        circle_work_progress_color: "#ecafc9"
         circle_break_progress_color: "#a3be8c"
         circle_thickness: 8
         circle_size: 160
@@ -225,11 +218,6 @@ widgets:
         on_left: "toggle_menu"
         on_middle: "reset_timer"
         on_right: "toggle_label"
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [ 1, 1 ]
 
   todo:
     type: "yasb.todo.TodoWidget"
@@ -248,8 +236,8 @@ widgets:
         offset_left: 0
       icons:
         add: "+ New"
-        edit: "Edit"
-        delete: "Delete"
+        edit: "\uf044" #
+        delete: "️\udb80\uddb4" #󰆴
         date: "\ue641"
         category: "\uf412"
         checked: "\udb80\udd34"
@@ -280,11 +268,13 @@ widgets:
       show_only_visible: false
       strict_filtering: false
       monitor_exclusive: false
+      callbacks:
+        on_middle: "close_app"
       animation:
         enabled: true
       preview:
         enabled: true
-        width: 450
+        width: 320
         delay: 400
       ignore_apps:
         processes: []
@@ -294,8 +284,8 @@ widgets:
   memory:
     type: "yasb.memory.MemoryWidget"
     options:
-      label: "\uf4bc {virtual_mem_used}/{virtual_mem_total}"
-      label_alt: "\uefc5 VIRT: {virtual_mem_percent}% SWAP: {swap_mem_percent}%"
+      label: "\uf4bc {virtual_mem_percent}%"
+      label_alt: "\uf4bc VIRT: {virtual_mem_used}/{virtual_mem_total} SWAP: {swap_mem_percent}%"
       update_interval: 5000
       callbacks:
         on_left: "do_nothing"
@@ -309,8 +299,8 @@ widgets:
   traffic:
     type: "yasb.traffic.TrafficWidget"
     options:
-      label: "<span>\udb83\udc9d</span>"
-      label_alt: "<span>\udb83\udc9d</span> \ueab4 {download_speed} | \ueab7 {upload_speed}"
+      label: "\udb83\udc9d"
+      label_alt: "\udb83\udc9d \ueab4 {download_speed} | \ueab7 {upload_speed}"
       update_interval: 1000
       menu:
         blur: true
@@ -327,7 +317,7 @@ widgets:
   wifi:
     type: "yasb.wifi.WifiWidget"
     options:
-      label: "<span>{wifi_icon}</span> {wifi_strength}%"
+      label: "{wifi_icon} {wifi_strength}%"
       label_alt: "{wifi_name} {wifi_strength}%"
       update_interval: 5000
       callbacks:
@@ -345,11 +335,6 @@ widgets:
           "\udb82\udd25", # Icon for 50-74% strength
           "\udb82\udd28", # Icon for 75-100% strength
         ]
-      label_shadow:
-        enabled: true
-        color: "black"
-        radius: 3
-        offset: [1, 1]
       menu_config:
         blur: true
         round_corners: true
@@ -366,8 +351,8 @@ widgets:
     type: "yasb.systray.SystrayWidget"
     options:
       class_name: "systray"
-      label_collapsed: "◀"
-      label_expanded: "▶"
+      label_collapsed: "\ueb6f" #
+      label_expanded: "\ueb70" #
       label_position: "right" # Can be "left" or "right"
       icon_size: 16 # Can be any integer between 8 and 64
       pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
@@ -380,18 +365,19 @@ widgets:
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
-      label: "<span>{icon}</span> {level}"
+      label: "{icon} {level}"
       # label_alt: "{volume}"
       tooltip: false
       volume_icons:
-        - "\uf026" # Icon for muted
-        - "\uf026" # Icon for 0-10% volume
-        - "\uf027" # Icon for 11-30% volume
-        - "\udb81\udd80" # Icon for 31-60% volume
-        - "\uf029" # Icon for 61-100% volume
+        - "\ueee8" # Icon for muted 
+        - "\uf026" # Icon for 0-10% volume 
+        - "\uf027" # Icon for 11-30% volume 
+        - "\uf027" # Icon for 31-60% volume 
+        - "\uf028" # Icon for 61-100% volume 
       callbacks:
-        on_middle: "toggle_mute"
-        on_right: "exec cmd.exe /c start ms-settings:sound"
+        on_left: "toggle_volume_menu"
+        on_middle: "exec cmd.exe /c start ms-settings:sound"
+        on_right: "toggle_mute"
       audio_menu:
         blur: true
         round_corners: true
@@ -407,6 +393,10 @@ widgets:
       label_alt: "{%A, %d %B %Y, %H:%M}"
       locale: "de_DE"
       timezones: ["Europe/Berlin", "Asia/Ho_Chi_Minh", "America/New_York"]
+      alarm_icons:
+        enabled: "\uf0f3"
+        disabled: "\uf0a2"
+        snooze: "\uf1f6"
       callbacks:
         on_middle: "do_nothing"
         on_right: "next_timezone"
@@ -414,6 +404,7 @@ widgets:
         blur: True
         round_corners: True
         round_corners_type: "normal"
+        extended: True
         border_color: "System"
         alignment: "center"
         direction: "down"
@@ -425,7 +416,7 @@ widgets:
   notifications:
     type: "yasb.notifications.NotificationsWidget"
     options:
-      label: "<span>\udb84\udd6b</span> {count}"
+      label: "\udb84\udd6b {count}"
       tooltip: false
       callbacks:
         on_left: "toggle_notification"
