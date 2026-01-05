@@ -19,6 +19,7 @@
 @media (prefers-color-scheme: dark) {
   #navigator-toolbox {
     border-bottom: none !important;
+    background-color: var(--rose-quartz-background) !important;
   }
 
   /* Toolbar icon as svg */
@@ -169,6 +170,7 @@
 @media (prefers-color-scheme: light) {
   #navigator-toolbox {
     border-bottom: none !important;
+    background-color: var(--rose-quartz-background-light);
   }
 
   /* Toolbar icon as svg */
