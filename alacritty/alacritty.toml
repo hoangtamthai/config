@@ -1,0 +1,93 @@
+[window]
+decorations = "full"
+opacity = 0.8
+
+[window.dimensions]
+columns = 100
+lines = 30
+
+[window.position]
+x = 300
+y = 100
+
+[window.padding]
+x = 1
+y = 1
+
+[scrolling]
+history = 10000
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "RobotoMono Nerd Font"
+
+[font.bold]
+style = "Normal"
+
+[font.italic]
+style = "Italic"
+
+[colors.primary]
+foreground = "#FFBFDD"
+background = "#0A0104"
+
+[colors.normal]
+black = "#1d1f21"
+red = "#e74789"
+green = "#13a10e"
+yellow = "#ad8c1b"
+blue = "#81a2be"
+magenta = "#b294bb"
+cyan = "#8abeb7"
+white = "#c5c8c6"
+
+[colors.bright]
+black = "#767676"
+red = "#e74789"
+green = "#23be51"
+yellow = "#f3f9b2"
+blue = "#3b78ff"
+magenta = "#b4009e"
+cyan = "#61d6d6"
+white = "#f2f2f2"
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+
+[terminal]
+shell = "pwsh"
+
+[mouse]
+hide_when_typing = true
+
+[[keyboard.bindings]]
+key = "T"
+mods = "Control"
+action = "CreateNewWindow"
+
+[[keyboard.bindings]]
+key = "Slash"
+mods = "Control"
+chars = "\u001f"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+chars = "\u0003"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control"
+action = "Paste"
+
+[[keyboard.bindings]]
+key = "A"
+mods = "Control"
+action = "Paste"
