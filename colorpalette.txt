@@ -9,12 +9,12 @@ function: #9ecba3
 
 # terminal
 black:   "#767676"
-blue:    "#3B78FF"
-cyan:    "#61D6D6"
-purple:  "#B4009E"
-red:     "#E74789"
-white:   "#F2F2F2"
-yellow:  "#F3F9B2"
-green:   "#23BE51"
+blue:    "#3b78ff"
+cyan:    "#61d6d6"
+purple:  "#b4009e"
+red:     "#e74789"
+white:   "#f2f2f2"
+yellow:  "#f3f9b2"
+green:   "#23be51"
 
 
