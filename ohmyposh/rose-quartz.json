@@ -9,8 +9,8 @@
       "segments": [
         {
           "type": "path",
-          "foreground": "#e488b6",
-          "properties": {
+          "foreground": "#e67d99",
+          "options": {
             "style": "folder"
           },
           "style": "plain",
@@ -38,7 +38,7 @@
           "type": "python",
           "foreground": "#26547a",
           "powerline_symbol": "\ue0b0",
-          "properties": {
+          "options": {
             "display_mode": "files",
             "fetch_virtual_env": true
           },

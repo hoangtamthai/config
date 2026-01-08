@@ -1,11 +1,14 @@
 # editor
-background: #1a1117
-text: #e2c5d2
-blink_cursor: #ecafc9
-key_word: #db6698
-comment: #777575
-number, variable: #b274cc
-function: #9ecba3
+background:   #1d0c13
+foreground:   #e2c5d2
+blink_cursor: #ff5896
+key_word:     #e76680
+comment:      #777575
+number, var:  #b274cc
+string:       #ce9178
+function:     #9ecba3
+border:       #965463
+icon:         #e67d99
 
 # terminal
 black:   "#767676"
