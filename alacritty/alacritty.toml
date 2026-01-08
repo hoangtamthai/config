@@ -1,6 +1,7 @@
 [window]
-decorations = "full"
+decorations = "Full"
 opacity = 0.8
+blur = false
 
 [window.dimensions]
 columns = 100
@@ -11,8 +12,8 @@ x = 300
 y = 100
 
 [window.padding]
-x = 1
-y = 1
+x = 5
+y = 5
 
 [scrolling]
 history = 10000
@@ -22,16 +23,17 @@ size = 12.0
 
 [font.normal]
 family = "RobotoMono Nerd Font"
+style = "Medium"
 
 [font.bold]
-style = "Normal"
+style = "Bold"
 
 [font.italic]
 style = "Italic"
 
 [colors.primary]
-foreground = "#FFBFDD"
-background = "#0A0104"
+foreground = "#e2c5d2"
+background = "#1d0c13"
 
 [colors.normal]
 black = "#1d1f21"
@@ -57,10 +59,26 @@ white = "#f2f2f2"
 style = { shape = "Beam", blinking = "On" }
 
 [terminal]
-shell = "pwsh"
+shell = "pwsh -NoLogo"
 
 [mouse]
 hide_when_typing = true
+
+[[keyboard.bindings]]
+key = "C"
+mods = "Control|Shift"
+action = "Copy"
+
+[[keyboard.bindings]]
+key = "V"
+mods = "Control|Shift"
+action = "Paste"
+
+# This allows Ctrl+C to still kill processes (sending \u0003)
+[[keyboard.bindings]]
+key = "C"
+mods = "Control"
+chars = "\u0003"
 
 [[keyboard.bindings]]
 key = "T"
@@ -71,23 +89,3 @@ action = "CreateNewWindow"
 key = "Slash"
 mods = "Control"
 chars = "\u001f"
-
-[[keyboard.bindings]]
-key = "C"
-mods = "Control"
-action = "Copy"
-
-[[keyboard.bindings]]
-key = "C"
-mods = "Control|Shift"
-chars = "\u0003"
-
-[[keyboard.bindings]]
-key = "V"
-mods = "Control"
-action = "Paste"
-
-[[keyboard.bindings]]
-key = "A"
-mods = "Control"
-action = "Paste"
