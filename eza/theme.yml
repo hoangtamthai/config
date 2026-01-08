@@ -1,0 +1,45 @@
+colorful: true
+date: {foreground: "#e67d99"}
+filekinds:
+  normal:
+    foreground: "#ecafc9"
+  directory:
+    foreground: "#e67d99"
+  symlink:
+    foreground: Cyan
+  executable:
+    foreground: Green
+perms:
+  user_read:
+    foreground: Yellow
+    is_bold: true
+  user_write:
+    foreground: Red
+    is_bold: true
+  user_execute_file:
+    foreground: Green
+    is_bold: true
+  user_execute_other:
+    foreground: Green
+    is_bold: true
+  group_read:
+    foreground: Yellow
+  group_write:
+    foreground: Red
+  group_execute:
+    foreground: Green
+  other_read:
+    foreground: Yellow
+  other_write:
+    foreground: Red
+  other_execute:
+    foreground: Green
+extensions:
+  rs: 
+    filename: { foreground: Red }
+  nix:
+    icon: { style: { foreground: Blue } }
+    filename: { foreground: Blue }
+  json: 
+    icon: { style: { foreground: Yellow } }
+    filename: { foreground: Yellow }
