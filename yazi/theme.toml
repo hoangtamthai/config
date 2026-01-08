@@ -1,0 +1,84 @@
+# Yazi Roze Quartz Theme
+
+[app]
+# Requires terminal OSC 11 support for the background
+overall = { bg = "#1d0c13" }
+
+[mgr]
+# CWD and highlighting
+cwd = { fg = "#61d6d6" }
+find_keyword = { fg = "#f3f9b2", italic = true }
+find_position = { fg = "#b4009e", bold = true }
+
+# Border
+border_symbol = "│"
+border_style = { fg = "#767676" }
+
+# Selection markers
+marker_selected = { fg = "#e2c5d2", bg = "#e2c5d2" }
+marker_copied = { fg = "#f3f9b2", bg = "#f3f9b2" }
+marker_cut = { fg = "#e74789", bg = "#e74789" }
+
+[indicator] # select dir/file
+parent = { fg = "#3b78ff", bg = "#45222e" }
+current = { bg = "#45222e" }
+preview = { fg = "#e2c5d2", bg = "#45222e" }
+
+[pick]
+active = { fg = "black", bg = "white" }
+
+[mode]
+# Status bar mode colors
+normal_main = { fg = "#1d0c13", bg = "#3b78ff", bold = true }
+normal_alt = { fg = "#3b78ff", bg = "#1d0c13" }
+
+select_main = { fg = "#1d0c13", bg = "#23be51", bold = true }
+select_alt = { fg = "#23be51", bg = "#1d0c13" }
+
+unset_main = { fg = "#1d0c13", bg = "#e74789", bold = true }
+unset_alt = { fg = "#e74789", bg = "#1d0c13" }
+
+[status]
+overall = { fg = "#e2c5d2", bg = "#1d0c13" }
+sep_left = { open = "", close = "" }
+sep_right = { open = "", close = "" }
+
+# Permissions
+perm_type = { fg = "#3b78ff" }
+perm_read = { fg = "#f3f9b2" }
+perm_write = { fg = "#e74789" }
+perm_exec = { fg = "#23be51" }
+perm_sep = { fg = "#777575" }
+
+[filetype]
+rules = [
+    { mime = "image/*", fg = "#61d6d6" },
+    { mime = "{audio,video}/*", fg = "#f3f9b2" },
+    { mime = "application/{zip,x-tar,x-gzip}", fg = "#b4009e" },
+    { url = "*", is = "link" , fg = "#61d6d6" },
+    { is = "exec", fg = "#23be51" },
+    # dir
+    { url = "*/", fg = "#e67d99", bold = true },
+]
+
+[input]
+border = { fg = "#3b78ff" }
+title = { fg = "#e2c5d2" }
+value = { fg = "#e2c5d2" }
+selected = { bg = "#777575" }
+
+[which]
+cols = 3
+mask = { bg = "#1d0c13" }
+cand = { fg = "#61d6d6" }
+rest = { fg = "#777575" }
+desc = { fg = "#e2c5d2" }
+separator = " ➜ "
+separator_style = { fg = "#767676" }
+
+[help]
+on = { fg = "#23be51" }
+run = { fg = "#b4009e" }
+desc = { fg = "#e2c5d2" }
+hovered = { bg = "#777575", bold = true }
+footer = { fg = "#1d0c13", bg = "#e2c5d2" }
