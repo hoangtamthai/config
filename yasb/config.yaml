@@ -30,6 +30,7 @@ bars:
       right:
         [
           "systray",
+          "vscode",
           "memory",
           "traffic",
           "wifi",
@@ -84,7 +85,7 @@ widgets:
     type: "yasb.weather.WeatherWidget"
     options:
       label: "<span>{icon}</span> {temp}"
-      label_alt: "{icon} {location}: {temp}, L {min_temp}, Max {max_temp}, Wind {wind}"
+      label_alt: "<span>{icon}</span> {location}: {temp}, L {min_temp}, H {max_temp}, Wind {wind}"
       api_key: "3bf4cf9a7c3f40d6b31174128242807" # Get your free API key from https://www.weatherapi.com/
       update_interval: 3600 # Update interval in seconds, Min 600 seconds
       hide_decimal: true
@@ -96,20 +97,20 @@ widgets:
       icons:
         sunnyDay: "\ue30d"
         clearNight: "\uf4ee"
-        cloudyDay: "\uf0c2"             #
-        cloudyNight: "\ue226"           #
-        rainyDay: "\uef1e"              #
-        rainyNight: "\uef1b"            #
-        snowyDay: "\ue35f"              #
-        snowyIcyDay: "\ue35f"           #
-        snowyNight: "\ue327"            #
-        snowyIcyNight: "\ue327"         #
-        blizzardDay: "\uf2dc"           #
-        blizzardNight: "\uf2dc"         #
-        foggyDay: "\ue303"              #
-        foggyNight: "\ue346"            #
-        thunderstormDay: "\ue30e"       #
-        thunderstormNight: "\ue329"     #
+        cloudyDay: "\uf0c2" #
+        cloudyNight: "\ue226" #
+        rainyDay: "\uef1e" #
+        rainyNight: "\uef1b" #
+        snowyDay: "\ue35f" #
+        snowyIcyDay: "\ue35f" #
+        snowyNight: "\ue327" #
+        snowyIcyNight: "\ue327" #
+        blizzardDay: "\uf2dc" #
+        blizzardNight: "\uf2dc" #
+        foggyDay: "\ue303" #
+        foggyNight: "\ue346" #
+        thunderstormDay: "\ue30e" #
+        thunderstormNight: "\ue329" #
         default: "\uebaa"
       weather_card:
         blur: true
@@ -137,8 +138,8 @@ widgets:
         on_middle: "do_nothing"
         on_right: "do_nothing"
       max_field_size:
-        label: 30
-        label_alt: 30
+        label: 20
+        label_alt: 20
       show_thumbnail: true
       controls_only: false
       controls_left: true
@@ -197,9 +198,9 @@ widgets:
       hide_on_break: false
       session_target: 8
       icons:
-        work: "\udb81\udd1f"    #󰔟
-        paused: "\udb86\udda0"  #󱦠
-        break: "\uf102"         #
+        work: "\udb81\udd1f" #󰔟
+        paused: "\udb86\udda0" #󱦠
+        break: "\uf102" #
       menu:
         blur: true
         round_corners: true
@@ -296,11 +297,51 @@ widgets:
         medium: 50
         high: 90
 
+  systray:
+    type: "yasb.systray.SystrayWidget"
+    options:
+      class_name: "systray"
+      label_collapsed: "\ueb6f" #
+      label_expanded: "\ueb70" #
+      label_position: "right" # Can be "left" or "right"
+      icon_size: 16 # Can be any integer between 8 and 64
+      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
+      show_unpinned: false
+      show_unpinned_button: true
+      show_battery: false
+      show_volume: false
+      show_network: true
+
+  vscode:
+    type: "yasb.vscode.VSCodeWidget"
+    options:
+      label: "\udb82\ude1e"
+      menu_title: "<span style='font-weight:bold'>VScode</span> recents"
+      max_field_size: 50
+      folder_icon: "\uf07b" #
+      file_icon: "\uf15b" #
+      truncate_to_root_dir: false
+      hide_folder_icon: false
+      hide_file_icon: false
+      max_number_of_folders: 30
+      max_number_of_files: 0 # set to 0 if you only want folders
+      modified_date_format: "Date modified: %Y-%m-%d %H:%M"
+      cli_command: "code" # or "codium" or "windsurf" or any other CLI command to open the workspace
+      callbacks:
+        on_right: "do_nothing"
+      state_storage_path: "C:\\Users\\huyen\\scoop\\apps\\vscode\\current\\data\\user-data\\User\\globalStorage\\state.vscdb"
+      menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "small"
+        alignment: "center"
+        offset_top: 0
+
   traffic:
     type: "yasb.traffic.TrafficWidget"
     options:
-      label: "\udb83\udc9d"
-      label_alt: "\udb83\udc9d \ueab4 {download_speed} | \ueab7 {upload_speed}"
+      label: "\udb81\udef3" #󰛳
+      label_alt: "\uf019 {download_speed} \uf093 {upload_speed}" #  
       update_interval: 1000
       menu:
         blur: true
@@ -311,21 +352,21 @@ widgets:
         direction: "down"
       callbacks:
         on_left: "toggle_menu"
-        on_middle: "toggle_label"
-        on_right: "exec cmd.exe /c start ms-settings:network-status"
+        on_middle: "exec cmd.exe /c start ms-settings:network-status"
+        on_right: "toggle_label"
 
   wifi:
     type: "yasb.wifi.WifiWidget"
     options:
-      label: "{wifi_icon} {wifi_strength}%"
+      label: "{wifi_icon}"
       label_alt: "{wifi_name} {wifi_strength}%"
       update_interval: 5000
       callbacks:
         on_left: "toggle_quick_settings"
         on_middle: "exec cmd.exe /c start ms-settings:network"
         on_right: "toggle_label"
-      ethernet_label: "<span>{wifi_icon}</span>"
-      ethernet_label_alt: "<span>{wifi_icon}</span>{ip_addr}"
+      ethernet_label: "{wifi_icon}"
+      ethernet_label_alt: "{wifi_icon} {ip_addr}"
       ethernet_icon: "\ueba9"
       get_exact_wifi_strength: false # Optional. Will require location access permission if true.
       wifi_icons: [
@@ -347,26 +388,10 @@ widgets:
         wifi_icons_secured: ["\ue670", "\ue671", "\ue672", "\ue673"]
         wifi_icons_unsecured: ["\uec3c", "\uec3d", "\uec3e", "\uec3f"]
 
-  systray:
-    type: "yasb.systray.SystrayWidget"
-    options:
-      class_name: "systray"
-      label_collapsed: "\ueb6f" #
-      label_expanded: "\ueb70" #
-      label_position: "right" # Can be "left" or "right"
-      icon_size: 16 # Can be any integer between 8 and 64
-      pin_click_modifier: "alt" # Can be "ctrl", "alt" or "shift"
-      show_unpinned: false
-      show_unpinned_button: true
-      show_battery: false
-      show_volume: false
-      show_network: true
-
   volume:
     type: "yasb.volume.VolumeWidget"
     options:
-      label: "{icon} {level}"
-      # label_alt: "{volume}"
+      label: "{icon}"
       tooltip: false
       volume_icons:
         - "\ueee8" # Icon for muted 
@@ -389,8 +414,8 @@ widgets:
   clock:
     type: "yasb.clock.ClockWidget"
     options:
-      label: "{%H:%M %A %d.%m.%Y}"
-      label_alt: "{%A, %d %B %Y, %H:%M}"
+      label: "{%H:%M %a %d.%m}"
+      label_alt: "{%H:%M, %A, %d %B %Y}"
       locale: "de_DE"
       timezones: ["Europe/Berlin", "Asia/Ho_Chi_Minh", "America/New_York"]
       alarm_icons:
@@ -398,7 +423,7 @@ widgets:
         disabled: "\uf0a2"
         snooze: "\uf1f6"
       callbacks:
-        on_middle: "do_nothing"
+        on_middle: "toggle_label"
         on_right: "next_timezone"
       calendar:
         blur: True

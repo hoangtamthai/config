@@ -1,6 +1,7 @@
 :root {
   --font-name-primary: "RobotoMono Nerd Font";
-  --text-primary: #ecafc9;
+  --text-primary: #e2c5d2;
+  --color-widget: #e67d99;
   --text-secondary: rgba(218, 162, 186, 0.5);
   --text-xs: 10px;
   --text-small: 12px;
@@ -37,19 +38,17 @@
   --color-dark-blue: rgb(36, 52, 85);
   --radius-normal: 8px;
   --radius-xl: 20px;
-  --padding-normal: 0 4px;
   --margin-small: 2px 0;
   --margin-sm: 4px 8px;
-  --margin-normal: 8px;
-  --margin-lg: 12px;
   --margin-widget: 2px 0;
   --margin-icon: 0px 2px 0px 2px;
-  --padding-label: 2px;
+  --padding-normal: 0 4px;
   --padding-icon: 0px 0px 0px 0px;
   --padding-menu: 12px 84px 12px 14px;
   --padding-volume: 12px 14px;
   --padding-button: 4px 8px;
   --padding-tooltip: 12px 24px;
+  --xs: 2px;
   --sm: 4px;
   --md: 8px;
   --lg: 12px;
@@ -67,6 +66,7 @@
 /* Context */
 .context-menu::item {
   background-color: var(--bg-hover-primary);
+  color: var(--color-widget);
 }
 .context-menu .menu-checkbox:hover {
   background-color: var(--bg-hover-primary);
@@ -75,11 +75,11 @@
 /* General */
 .icon {
   font-size: var(--text-normal);
-  padding: var(--padding-icon);
-  margin: var(--margin-icon);
+  color: var(--color-widget);
 }
 .label {
   font-size: var(--text-normal);
+  color: var(--color-widget);
 }
 .yasb-bar {
   padding: var(--padding-normal);
@@ -87,15 +87,17 @@
   background-color: var(--bg-taskbar);
 }
 .widget {
-  padding: var(--padding-normal);
-  margin: var(--margin-widget);
+  color: var(--color-widget);
+  padding-right: var(--md);
+  padding-left: var(--sm);
+  margin: var(--margin-small);
   border-radius: var(--radius-normal);
 }
 .widget:hover {
   background-color: var(--bg-hover-primary);
 }
 .widget .label {
-  padding: var(--padding-label);
+  padding: var(--xs);
   font-family: var(--font-name-primary);
 }
 
@@ -129,6 +131,9 @@
 }
 
 /* Weather */
+.weather-widget .icon {
+  padding-right: var(--sm);
+}
 .weather-widget .icon.sunnyDay,
 .weather-widget .icon.cloudyDay,
 .weather-widget .icon.rainyDay,
@@ -156,19 +161,23 @@
 /* Weather Card */
 .weather-card {
   background-color: var(--bg-transparent);
+  color: var(--text-primary);
 }
 .weather-card-today .label {
   font-size: var(--text-normal);
+  color: var(--text-primary);
 }
 .weather-card-today .label.location {
   font-size: var(--text-2xl);
   font-weight: var(--font-bold);
+  color: var(--text-primary);
 }
 .weather-card-today .label.alert {
+  color: var(--text-primary);
   font-size: var(--text-normal);
   font-weight: var(--font-bold);
   border: 1px solid rgba(247, 209, 42, 0.1);
-  color: rgba(196, 181, 162, 0.85);
+  /* color: rgba(196, 181, 162, 0.85); */
   border-radius: var(--radius-normal);
   padding: 5px 0;
 }
@@ -183,6 +192,7 @@
   background-color: var(--bg-hover-primary);
 }
 .weather-card-day .label {
+  color: var(--text-primary);
   font-size: var(--text-normal);
 }
 .weather-card .hourly-container {
@@ -306,20 +316,19 @@
   font-family: var(--font-name-primary);
   color: var(--text-primary);
   border: 1px solid var(--color-grey);
-  margin: var(--margin-normal);
 }
 .power-menu-popup .button.hover {
   background-color: var(--bg-hover-primary);
   border: 1px solid var(--color-grey);
 }
 .power-menu-popup .button .label {
-  margin-bottom: var(--margin-normal);
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
 }
 .power-menu-popup .button .icon {
   font-size: var(--text-5xl);
-  padding-top: var(--margin-normal);
+  padding-top: var(--md);
+  padding-right: var(--lg);
 }
 .power-menu-popup .button.cancel .icon {
   color: var(--color-green);
@@ -390,7 +399,6 @@
 .traffic-menu .download-speed-unit {
   font-size: var(--text-normal);
   font-weight: var(--font-bold);
-  padding-top: var(--margin-normal);
 }
 .traffic-menu .upload-speed-placeholder,
 .traffic-menu .download-speed-placeholder {
@@ -481,7 +489,6 @@
 }
 .taskbar-preview .header {
   padding-bottom: 18px;
-  padding-top: var(--margin-normal);
 }
 .taskbar-preview .header .title {
   color: var(--text-primary);
@@ -540,13 +547,12 @@
   border-radius: var(--radius-normal);
 }
 .media-widget .label {
-  color: var(--text-primary);
   padding: 2px 10pxs;
   padding-right: 4px;
   font-size: var(--text-normal);
 }
 .media-widget .btn {
-  color: var(--text-secondary);
+  color: var(--color-widget);
   padding: 0 4px;
   margin: 0;
   font-family: var(--font-name-primary);
@@ -554,7 +560,6 @@
   font-size: var(--text-lg);
 }
 .media-widget .btn:hover {
-  color: var(--text-primary);
   background-color: var(--bg-hover-third);
 }
 .media-widget .btn.play {
@@ -568,8 +573,8 @@
 
 /* Media Menu */
 .media-menu {
-  min-width: 320px;
-  max-width: 320px;
+  min-width: 450px;
+  max-width: 450px;
   background-color: var(--bg-primary);
 }
 .media-menu .title,
@@ -577,7 +582,7 @@
 .media-menu .source {
   font-size: var(--text-lg);
   font-weight: var(--font-bold);
-  margin-left: 20px;
+  margin-left: var(--md);
   font-family: var(--font-name-primary);
 }
 .media-menu .artist {
@@ -697,7 +702,7 @@
   font-family: var(--font-name-primary);
 }
 .todo-menu .header {
-  margin: var(--margin-normal);
+  margin: var(--margin-sm);
 }
 .todo-menu .header .add-task-button {
   padding: var(--padding-button);
@@ -855,4 +860,42 @@
 }
 .todo-menu .app-dialog .category-button.important {
   color: var(--color-light-red);
+}
+
+/* Visual Studio Code */
+.vscode-widget {
+  color: #89b4fa;
+}
+.vscode-menu {
+  background-color: var(--bg-transparent);
+}
+.vscode-menu .header {
+  margin: var(--md);
+}
+.vscode-menu .contents {
+  background-color: var(--bg-transparent);
+}
+.vscode-menu .contents .item {
+  background-color: var(--bg-transparent);
+  padding: var(--lg);
+  margin: var(--margin-sm);
+  border: 1px solid var(--bg-hover-primary);
+  border-radius: var(--radius-normal);
+}
+.vscode-menu .contents .item:hover {
+  background-color: var(--bg-hover-primary);
+}
+.vscode-menu .contents .item .title {
+  padding: var(--md) 0;
+}
+.vscode-menu .contents .item .modified-date {
+  padding: var(--md) 0;
+}
+.vscode-menu .contents .item .folder-icon {
+  padding: var(--md);
+  margin: var(--md) var(--sm);
+}
+.vscode-menu .contents .item .file-icon {
+  padding: var(--md);
+  margin: var(--md) var(--sm);
 }
