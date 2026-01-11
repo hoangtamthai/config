@@ -30,6 +30,7 @@ bars:
       right:
         [
           "systray",
+          "language",
           "vscode",
           "memory",
           "traffic",
@@ -312,6 +313,33 @@ widgets:
       show_volume: false
       show_network: true
 
+  language:
+    type: "yasb.language.LanguageWidget"
+    options:
+      label: "{lang[language_code]}-{lang[country_code]}"
+      label_alt: "{lang[full_name]}"
+      update_interval: 10
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "do_nothing"
+        on_right: "toggle_label"
+      language_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "center"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        show_layout_icon: true
+        layout_icon: "\uf11c"
+      label_shadow:
+        enabled: true
+        color: "black"
+        radius: 3
+        offset: [ 1, 1 ]
+
   vscode:
     type: "yasb.vscode.VSCodeWidget"
     options:
@@ -335,7 +363,7 @@ widgets:
         round_corners: true
         round_corners_type: "small"
         alignment: "center"
-        offset_top: 0
+        offset_top: 6
 
   traffic:
     type: "yasb.traffic.TrafficWidget"

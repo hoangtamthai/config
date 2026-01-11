@@ -899,3 +899,30 @@
   padding: var(--md);
   margin: var(--md) var(--sm);
 }
+
+/* Language */
+.language-menu {
+  background: var(--bg-transparent);
+}
+.language-menu .header {
+  margin: var(--md);
+}
+.language-menu .footer {
+  margin: var(--md);
+}
+.language-menu .language-item {
+  border: 1px solid var(--bg-hover-primary);
+  border-radius: var(--radius-normal);
+  background-color: var(--bg-transparent);
+  padding: var(--lg);
+  margin: var(--margin-sm);
+}
+.language-menu .language-item:hover {
+  background: var(--bg-hover-primary);
+}
+.language-menu .language-item.active {
+  background-color: var(--bg-hover-primary);
+}
+.language-menu .language-item .icon {
+  margin: 0 var(--md) 0 0;
+}
