@@ -1,8 +1,10 @@
 :root {
-  --s-toolbar-fg: rgb(255, 112, 141) !important;
+  --s-toolbar-fg: #e67d99 !important;
   --s-toolbar-bg: #000000ff !important;
   /*custom value*/
   --rose-quartz-foreground: #e67d99;
+  --filter-rose-quartz: brightness(0) saturate(100%) invert(74%) sepia(11%)
+    saturate(5159%) hue-rotate(298deg) brightness(98%) contrast(84%);
   --rose-quartz-background: #1d0c13;
   --rose-quartz-background-light: #efd1de;
 
@@ -23,6 +25,8 @@
   }
 
   /* Toolbar icon as svg */
+  #sidebar-button,
+  #screenshot-button,
   #downloads-button,
   #PanelUI-menu-button,
   #back-button,
@@ -32,15 +36,7 @@
   #sync-button,
   #fxa-toolbar-menu-button,
   #unified-extensions-button {
-    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
-      brightness(94%) contrast(93%) !important;
-  }
-
-  .toolbarbutton {
-    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
-      brightness(94%) contrast(93%) !important;
-  }
-  toolbar .toolbarbutton-1 {
+    filter: var(--filter-rose-quartz) !important;
     color: var(--rose-quartz-foreground) !important;
   }
   toolbarbutton {
@@ -100,12 +96,10 @@
     #urlbar[focused="true"]
     .urlbar-addon-page-action[style*=".svg"]
     > .urlbar-icon {
-    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
-      brightness(94%) contrast(93%) !important;
+    filter: var(--filter-rose-quartz) !important;
   }
   .urlbar-icon {
-    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
-      brightness(94%) contrast(93%) !important;
+    filter: var(--filter-rose-quartz) !important;
   }
 
   /* saved bookmarks icon */
@@ -183,18 +177,17 @@
   #sync-button,
   #fxa-toolbar-menu-button,
   #unified-extensions-button {
-    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
-      brightness(94%) contrast(93%) !important;
+    filter: var(--filter-rose-quartz) !important;
   }
 
   .toolbarbutton {
-    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
-      brightness(94%) contrast(93%) !important;
+    filter: var(--filter-rose-quartz) !important;
   }
   toolbar .toolbarbutton-1 {
     color: var(--rose-quartz-foreground) !important;
   }
   toolbarbutton {
+    filter: var(--filter-rose-quartz) !important;
     color: var(--rose-quartz-foreground) !important;
   }
   .titlebar-button {
@@ -251,12 +244,10 @@
     #urlbar[focused="true"]
     .urlbar-addon-page-action[style*=".svg"]
     > .urlbar-icon {
-    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
-      brightness(94%) contrast(93%) !important;
+    filter: var(--filter-rose-quartz) !important;
   }
   .urlbar-icon {
-    filter: invert(51%) sepia(93%) saturate(652%) hue-rotate(308deg)
-      brightness(94%) contrast(93%) !important;
+    filter: var(--filter-rose-quartz) !important;
   }
 
   /* saved bookmarks icon */

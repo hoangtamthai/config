@@ -24,7 +24,7 @@ user_pref(
   "network.trr.custom_uri",
   "https://adguard.tamthai.de/dns-query/thtam-laptop"
 );
-user_pref("network.trr.mode", 3); // most secure only through defined DNS
+user_pref("network.trr.mode", 2); // secure through defined DNS and fallback
 
 // PREF: increase TLS token caching
 user_pref("network.ssl_tokens_cache_capacity", 10240); // default=2048; more TLS token caching (fast reconnects)
