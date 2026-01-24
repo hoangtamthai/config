@@ -3,9 +3,6 @@
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
-  "[latex]": {
-    "editor.defaultFormatter": "mathematic.vscode-latex"
-  },
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
@@ -101,7 +98,7 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "editor.acceptSuggestionOnEnter": "off",
   "editor.accessibilitySupport": "off",
-  "editor.autoClosingDelete": "never",
+  "editor.autoClosingDelete": "always",
   "editor.bracketPairColorization.enabled": false,
   "editor.cursorSurroundingLines": 10,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -114,7 +111,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.lineNumbers": "relative",
   "editor.minimap.maxColumn": 80,
-  "editor.minimap.showSlider": "always",
+  "editor.minimap.showSlider": "mouseover",
   "editor.minimap.size": "fill",
   "editor.renderWhitespace": "all",
   "editor.rulers": [
@@ -127,12 +124,24 @@
   "editor.semanticTokenColorCustomizations": {
     "enabled": true,
     "rules": {
-      "class": "#99cedf",
-      "enum": "#cd87ed",
-      "enumMember": "#cd87ed",
-      "parameter": "#e2c5d2",
+      "comment": "#d5d363",
+      "function": "#9ecba3",
+      "method": "#9ecba3",
+      "macro": "#9ecba3",
+      "decorator": "#9ecba3",
+      "builtinAttribute": "#9ecba3",
+      "class": "#c6d0f5",
+      "struct": "#c6d0f5",
+      "enum": "#c6d0f5",
+      "enumMember": "#c6d0f5",
+      "interface": "#c6d0f5",
+      "derive": "#c6d0f5",
       "variable.constant": "#cd87ed",
-      "variable.defaultLibrary": "#db6698"
+      "type": "#cd87ed",
+      "parameter": "#e2c5d2",
+      "namespace": "#e2c5d2",
+      "variable.defaultLibrary": "#db6698",
+      "keyword": "#db6698"
     }
   },
   "editor.stickyScroll.enabled": true,
@@ -146,7 +155,14 @@
     "strings": "#ce9178",
     "textMateRules": [
       {
-        "name": "Class name",
+        "name": "Class",
+        "scope": ["support.class.component"],
+        "settings": {
+          "foreground": "#c6d0f5"
+        }
+      },
+      {
+        "name": "Keyword",
         "scope": ["entity.name.function"],
         "settings": {
           "foreground": "#db6698"
@@ -154,7 +170,7 @@
       },
       {
         "name": "Tags",
-        "scope": ["keyword.other", "entity.name"],
+        "scope": ["keyword.other", "entity.name.tag"],
         "settings": {
           "foreground": "#e2c5d2"
         }
@@ -163,18 +179,21 @@
         "name": "Attributes, Constant",
         "scope": [
           "entity.other.attribute-name",
-          "constant.language.json.comments"
+          "constant.language.json.comments",
+          "constant.language.boolean",
+          "types"
         ],
         "settings": {
           "foreground": "#cd87ed"
         }
       },
       {
-        "name": "Operator",
+        "name": "Operator, Syntax",
         "scope": [
           "keyword.operator",
           "punctuation.section.embedded",
           "punctuation.definition",
+          "punctuation.definition.template-expression",
           "punctuation",
           "meta.brace"
         ],
@@ -244,12 +263,14 @@
   "security.workspace.trust.untrustedFiles": "open",
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
-  "terminal.external.windowsExec": "C:\\Program Files\\PowerShell\\pwsh",
+
+  // Terminal
+  "terminal.external.windowsExec": "Terminal.app",
   "terminal.integrated.allowChords": false,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.profiles.windows": {
-    "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe": {
+    "Window PowerShell": {
       "args": [],
       "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
     }
@@ -259,7 +280,7 @@
   "terminal.integrated.tabs.enabled": false,
 
   // Vim
-  "vim.enableNeovim": true,
+  "vim.enableNeovim": false,
   "vim.foldfix": true,
   "vim.handleKeys": {
     "<C-c>": false
@@ -280,9 +301,8 @@
   ],
   "vim.leader": " ",
   "vim.mouseSelectionGoesIntoVisualMode": true,
-  "vim.neovimConfigPath": "D:\\Config\\nvim\\init.lua",
-  "vim.neovimPath": "D:\\Bon\\Programing\\Nvim\\nvim-win64\\bin\\nvim.exe",
-  "vim.neovimUseConfigFile": true,
+  // "vim.neovimConfigPath": "D:\\config\\nvim\\init.lua",
+  "vim.neovimUseConfigFile": false,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "e"],
@@ -357,8 +377,8 @@
     "button.secondaryBackground": "#2a0915",
     "button.secondaryForeground": "#ffffff",
     "button.secondaryHoverBackground": "#45494e",
-    "checkbox.background": "#280c13",
-    "checkbox.border": "#00000000",
+    "checkbox.background": "#1d0c13",
+    "checkbox.border": "#965463",
     "checkbox.foreground": "#cccccc",
     "debugExceptionWidget.background": "#333333",
     "debugExceptionWidget.border": "#474747",
@@ -367,10 +387,11 @@
     "diffEditor.border": "#444444",
     "diffEditor.insertedTextBackground": "#9bb95533",
     "diffEditor.removedTextBackground": "#ff000033",
-    "dropdown.background": "#280c13",
+    "dropdown.listBackground": "#1d0c13",
+    "dropdown.background": "#1d0c13",
     "dropdown.border": "#00000000",
-    "dropdown.foreground": "#cccccc",
-    "editor.background": "#1a1117",
+    "dropdown.foreground": "#e2c5d2",
+    "editor.background": "#1d0c13",
     "editor.findMatchBackground": "#424c5a",
     "editor.findMatchBorder": "#74879f",
     "editor.findMatchHighlightBackground": "#ea5c0055",
@@ -380,7 +401,7 @@
     "editor.foldBackground": "#265f784d",
     "editor.foreground": "#d4d4d4",
     "editor.hoverHighlightBackground": "#264f7840",
-    "editor.inactiveSelectionBackground": "#3a3d41e3",
+    "editor.inactiveSelectionBackground": "#1d0c13e3",
     "editor.lineHighlightBackground": "#ffffff0A",
     "editor.lineHighlightBorder": "#282828",
     "editor.rangeHighlightBackground": "#ffffff0b",
@@ -417,16 +438,16 @@
     "editorHoverWidget.statusBarBackground": "#1d0c13",
     "editorIndentGuide.activeBackground1": "#707070",
     "editorIndentGuide.background1": "#404040",
-    "editorInfo.background": "#4490BF00",
+    "editorInfo.background": "#1d0c13dd",
     "editorInfo.border": "#4490BF00",
     "editorInfo.foreground": "#75beff",
-    "editorLineNumber.activeForeground": "#c6c6c6",
-    "editorLineNumber.foreground": "#858585",
+    "editorLineNumber.activeForeground": "#e2c5d2cc",
+    "editorLineNumber.foreground": "#e2c5d2cc",
     "editorLink.activeForeground": "#4e94ce",
     "editorMarkerNavigationInfo.background": "#75beff",
     "editorOverviewRuler.background": "#25252500",
     "editorOverviewRuler.border": "#7f7f7f4d",
-    "editorRuler.foreground": "#530422",
+    "editorRuler.foreground": "#965463",
     "editorSuggestWidget.background": "#1d0c13",
     "editorSuggestWidget.border": "#454545",
     "editorSuggestWidget.foreground": "#e2c5d2",
@@ -442,7 +463,7 @@
     "editormarkernavigation.background": "#2d2d30",
     "editormarkernavigationerror.background": "#f48771",
     "editormarkernavigationwarning.background": "#cca700",
-    "focusBorder": "#d7437b",
+    "focusBorder": "#965463",
     "foreground": "#e2c5d2",
     "gitDecoration.addedResourceForeground": "#90b496",
     "gitDecoration.conflictingResourceForeground": "#6c6cc4",
@@ -453,11 +474,11 @@
     "gitDecoration.stageModifiedResourceForeground": "#c9b290",
     "gitDecoration.submoduleResourceForeground": "#8db9e2",
     "gitDecoration.untrackedResourceForeground": "#9ab893",
-    "icon.foreground": "#ffa6b7f5",
-    "input.background": "#280c13",
-    "input.border": "#00000000",
-    "input.foreground": "#cccccc",
-    "input.placeholderForeground": "#fffffff5",
+    "icon.foreground": "#e67d99",
+    "input.background": "#1d0c13",
+    "input.border": "#965463",
+    "input.foreground": "#e2c5d2",
+    "input.placeholderForeground": "#e2c5d2f5",
     "inputOption.activeBackground": "#c0394d",
     "inputOption.activeBorder": "#000000f9",
     "inputOption.activeForeground": "#ffffff",
@@ -474,22 +495,22 @@
     "listFilterWidget.background": "#653723",
     "listFilterWidget.noMatchesOutline": "#d94b73",
     "listFilterWidget.outline": "#00000000",
-    "menu.background": "#240c11",
-    "menu.border": "#00000085",
-    "menu.foreground": "#cccccc",
-    "menu.selectionBackground": "#731f3e",
+    "menu.background": "#1d0c13",
+    "menu.border": "#965463",
+    "menu.foreground": "#e2c5d2",
+    "menu.selectionBackground": "#1d0c13",
     "menu.selectionBorder": "#00000000",
     "menu.selectionForeground": "#ffffff",
-    "menu.separatorBackground": "#bbbbbb",
+    "menu.separatorBackground": "#965463",
     "menubar.selectionBackground": "#f024241a",
     "menubar.selectionForeground": "#cccccc",
-    "merge.commoncontentbackground": "#282828",
-    "merge.commonheaderbackground": "#383838",
-    "merge.currentcontentbackground": "#27403b",
-    "merge.currentheaderbackground": "#367366",
-    "merge.incomingcontentbackground": "#28384b",
-    "merge.incomingheaderbackground": "#395f8f",
-    "minimap.background": "#1a1117",
+    "merge.commonContentBackground": "#1d0c13aa",
+    "merge.commonHeaderBackground": "#383838aa",
+    "merge.currentContentBackground": "#27403baa",
+    "merge.currentHeaderBackground": "#367366aa",
+    "merge.incomingHeaderBackground": "#28384baa",
+    "merge.incomingContentBackground": "#395f8faa",
+    "minimap.background": "#1d0c13",
     "minimap.errorHighlight": "#f48771",
     "minimap.findMatchHighlight": "#424c5afc",
     "minimap.selectionHighlight": "#45222efc",
@@ -507,10 +528,10 @@
     "notificationsErrorIcon.foreground": "#db7661",
     "notificationsInfoIcon.foreground": "#75beff",
     "notificationsWarningIcon.foreground": "#cca700",
-    "panel.background": "#19030bf5",
-    "panel.border": "#511a2c",
-    "panelSection.border": "#d5cfcf59",
-    "panelTitle.activeBorder": "#be4a6b",
+    "panel.background": "#1d0c13f5",
+    "panel.border": "#965463",
+    "panelSection.border": "#965463",
+    "panelTitle.activeBorder": "#965463",
     "panelTitle.activeForeground": "#ffd0d0",
     "panelTitle.inactiveForeground": "#dedede99",
     "peekView.border": "#007acc",
@@ -538,17 +559,18 @@
     "settings.focusedRowBackground": "#ffffff07",
     "settings.headerForeground": "#ffa6b7f5",
     "sideBar.background": "#1d0c13",
-    "sideBar.border": "#000000fb",
+    "sideBar.border": "#965463",
     "sideBar.dropBackground": "#302224",
     "sideBar.foreground": "#e2c5d2",
     "sideBarSectionHeader.background": "#00000000",
     "sideBarSectionHeader.border": "#cccccc33",
     "sideBarSectionHeader.foreground": "#cccccc",
     "sideBarTitle.foreground": "#bbbbbb",
-    "statusBar.background": "#280812",
+    "statusBar.background": "#1d0c13",
     "statusBar.debuggingBackground": "#3f0918",
-    "statusBar.debuggingForeground": "#ffffff",
+    "statusBar.debuggingForeground": "#ffaeae",
     "statusBar.foreground": "#e67d99",
+    "statusBar.border": "#965463aa",
     "statusBar.noFolderBackground": "#45101c",
     "statusBar.noFolderForeground": "#ffffff",
     "statusBarItem.activeBackground": "#ffffff25",
@@ -556,15 +578,15 @@
     "statusBarItem.remoteBackground": "#901644",
     "statusBarItem.remoteForeground": "#ffffff",
     "tab.activeBackground": "#560f23",
-    "tab.activeBorder": "#000000fb",
+    "tab.activeBorder": "#965463",
     "tab.activeBorderTop": "#c76a91",
     "tab.activeForeground": "#e2c5d2",
-    "tab.border": "#000000",
+    "tab.border": "#965463",
     "tab.hoverBackground": "#642130",
-    "tab.hoverBorder": "#e2366500",
+    "tab.hoverBorder": "#965463",
     "tab.hoverForeground": "#e67d99",
-    "tab.inactiveBackground": "#130205",
-    "tab.inactiveForeground": "#ffffff80",
+    "tab.inactiveBackground": "#1d0c13",
+    "tab.inactiveForeground": "#e2c5d2aa",
     "terminal.ansiBlack": "#3b3b3b",
     "terminal.ansiBlue": "#2472c8",
     "terminal.ansiBrightBlack": "#666666",
@@ -582,7 +604,7 @@
     "terminal.ansiWhite": "#b4a4a4",
     "terminal.ansiYellow": "#e5e510",
     "terminal.background": "#1d0a11",
-    "terminal.border": "#d5cfcf59",
+    "terminal.border": "#965463",
     "terminal.foreground": "#e2c5d2",
     "terminal.selectionBackground": "#6e1b3ed7",
     "terminalCursor.background": "#731538",
@@ -605,7 +627,6 @@
   },
   "workbench.settings.applyToAllProfiles": [
     "[html]",
-    "[latex]",
     "[yaml]",
     "code-runner.executorMap",
     "code-runner.executorMapByFileExtension",
