@@ -1,23 +1,35 @@
 # editor
 background:   #1d0c13
 foreground:   #e2c5d2
-blink_cursor: #ff5896
-key_word:     #e76680
-comment:      #777575
-number, var:  #b274cc
-string:       #ce9178
-function:     #9ecba3
+blink_cursor: #ecafc9
 border:       #965463
 icon:         #e67d99
+selection:    #4F1C31
+# code
+class:        #c6d0f5
+key:          #db6698
+comment:      #d5d363
+const:        #cd87ed
+string:       #ce9178
+function:     #9ecba3
+operator:     #9e9e9e
 
 # terminal
-black:   "#767676"
-blue:    "#3b78ff"
-cyan:    "#61d6d6"
-purple:  "#b4009e"
-red:     "#e74789"
-white:   "#f2f2f2"
-yellow:  "#f3f9b2"
-green:   "#23be51"
-
-
+background:     "#1D0C13",
+foreground:     "#e2c5d2",
+bright_black:   "#767676"
+black:          "#0c0c0c",
+bright_blue:    "#3b78ff"
+blue:           "#0037da",
+bright_cyan:    "#61d6d6"
+cyan:           "#3a96dd",
+bright_purple:  "#b4009e"
+purple:         "#881798",
+bright_red:     "#e74856"
+red:            "#c50f1f",
+bright_white:   "#f2f2f2"
+white:          "#cccccc",
+bright_yellow:  "#f3f9b2"
+yellow:         "#c19c00"
+bright_green:   "#23be51"
+green:          "#13a10e",
