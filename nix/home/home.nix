@@ -31,6 +31,7 @@
     docker-compose
     opencode
     unstable.pnpm
+    sqlite
 
     # languages
     python3
