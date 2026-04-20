@@ -55,6 +55,8 @@ user_pref("browser.ctrlTab.sortByRecentlyUsed", true);
 
 //Enable userChrome.css
 user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
+//pasword match host
+user_pref("signon.includeOtherSubdomainsInLookup", false);
 
 // Reduce disk read/write
 user_pref("browser.sessionstore.idleDelay", 180);

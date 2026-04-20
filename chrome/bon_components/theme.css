@@ -43,7 +43,8 @@
     color: var(--rose-quartz-foreground) !important;
   }
   .titlebar-button {
-    padding: 7px 15px !important;
+    padding: 5px !important;
+    margin: 0 5px !important;
   }
   .toolbarbutton-animatable-box,
   .toolbarbutton-1 {
