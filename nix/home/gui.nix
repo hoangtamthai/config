@@ -13,7 +13,7 @@
     ungoogled-chromium
     unstable.vscode
     vscode-runner
-    zed
+    unstable.zed-editor
   ];
 
   i18n.inputMethod = {

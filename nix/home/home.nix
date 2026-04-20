@@ -67,7 +67,7 @@
       la = "eza -la";
       ls = "eza";
       g = "git";
-      hmu = "home-manager switch --flake ~/config/nix/.#tam-gui";
+      hms = "home-manager switch --flake ~/config/nix/.#tam-gui";
     };
     loginExtra = ''
       if [ -d "$HOME/.nix-profile/bin" ] ; then
