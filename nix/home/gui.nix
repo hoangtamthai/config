@@ -4,7 +4,7 @@
 
   home.packages = with pkgs; [
     discord
-    firefox
+    unstable.firefox
     obsidian
     steam
     syncthingtray
@@ -13,7 +13,7 @@
     ungoogled-chromium
     unstable.vscode
     vscode-runner
-    unstable.zed-editor
+    # unstable.zed-editor
   ];
 
   i18n.inputMethod = {
@@ -26,7 +26,7 @@
 
   home.sessionVariables = {
     # GTK_IM_MODULE = "fcitx";
-    QT_IM_MODULE = "fcitx";
+    # QT_IM_MODULE = "fcitx";
     XMODIFIERS = "@im=fcitx";
     INPUT_METHOD = "fcitx";
   };

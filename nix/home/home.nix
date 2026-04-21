@@ -18,12 +18,14 @@
     screen
     tmux
     z-lua
+    zsh-autocomplete
     # tools
     kanata
     ffmpeg
     oh-my-posh
     imagemagick
     tailscale
+    tailscale-systray
     # editors
     neovim
     # dev tools
@@ -62,7 +64,10 @@
   };
   programs.zsh = {
     enable = true;
-    autosuggestion.enable = true;
+    autosuggestion.enable = false;
+    enableCompletion = false;
+    syntaxHighlighting.enable = true;
+    history.size = 10000;
     shellAliases = {
       la = "eza -la";
       ls = "eza";
@@ -70,8 +75,7 @@
       hms = "home-manager switch --flake ~/config/nix/.#tam-gui";
     };
     loginExtra = ''
-      if [ -d "$HOME/.nix-profile/bin" ] ; then
-        PATH="$HOME/.nix-profile/bin:$PATH"
+      if [ -d "$HOME/.nix-profile/bin" ] ; then PATH="$HOME/.nix-profile/bin:$PATH"
       fi
 
       if [ -d "$HOME/.nix-profile/share/applications" ] ; then
@@ -85,14 +89,39 @@
 
       # Set XDG_DATA_DIRS for GUI applications
       export XDG_DATA_DIRS="$HOME/.nix-profile/share:/nix/var/nix/profiles/default/share:/usr/local/share:/usr/share"
+      export NIX_PROFILE="$HOME/.nix-profile"
 
       # Set locale
       export LANG=en_US.UTF-8
       export LANGUAGE=en_US
     '';
     initContent = ''
-      # ohmypost init
+      # options
+      HISTFILE=~/.zsh_history
+      HISTSIZE=10000
+      SAVEHIST=10000
+      setopt HIST_EXPIRE_DUPS_FIRST
+      setopt EXTENDED_HISTORY
+      setopt INC_APPEND_HISTORY      # Append immediately (key!)
+      setopt SHARE_HISTORY           # Share across tabs/sessions
+      setopt HIST_FIND_NO_DUPS
+
+      # ohmyposh init
       eval "$(oh-my-posh init zsh --config ~/config/ohmyposh/rose-quartz.json)"
+
+      # zsh-autocomplete
+      autoload -Uz compinit
+      compinit
+      source $NIX_PROFILE/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+      zstyle ':completion:*' completer _expand _complete _ignored _approximate _expand_alias
+      zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
+      zstyle ':autocomplete:*' default-context history-incremental-search-backward 
+      zstyle ':autocomplete:*' min-input 1
+      zstyle ':autocomplete:*' add-semicolon no
+      # menu selection
+      bindkey -M menuselect '\r' .accept-line
+      bindkey               '^I' menu-complete
+      bindkey -M menuselect '^I' menu-complete
     '';
   };
   programs.z-lua = {
