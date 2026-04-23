@@ -31,6 +31,8 @@
     # dev tools
     docker
     docker-compose
+    lazydocker
+    hurl
     opencode
     unstable.pnpm
     sqlite
@@ -73,6 +75,7 @@
       ls = "eza";
       g = "git";
       hms = "home-manager switch --flake ~/config/nix/.#tam-gui";
+      ncg = "nix-collect-garbage -d";
     };
     loginExtra = ''
       if [ -d "$HOME/.nix-profile/bin" ] ; then PATH="$HOME/.nix-profile/bin:$PATH"
@@ -109,6 +112,7 @@
       # ohmyposh init
       eval "$(oh-my-posh init zsh --config ~/config/ohmyposh/rose-quartz.json)"
 
+      # https://github.com/marlonrichert/zsh-autocomplete?tab=readme-ov-file#make--and--always-move-the-cursor-on-the-command-line
       # zsh-autocomplete
       autoload -Uz compinit
       compinit
@@ -120,8 +124,10 @@
       zstyle ':autocomplete:*' add-semicolon no
       # menu selection
       bindkey -M menuselect '\r' .accept-line
-      bindkey               '^I' menu-complete
+      bindkey               '^I' expand-or-complete 
       bindkey -M menuselect '^I' menu-complete
+      bindkey -M menuselect '^[[D' .backward-char '^[OD' .backward-char
+      bindkey -M menuselect '^[[C' .forward-char  '^[OC' .forward-char
     '';
   };
   programs.z-lua = {
