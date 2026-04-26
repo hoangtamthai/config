@@ -24,13 +24,17 @@
     ffmpeg
     oh-my-posh
     imagemagick
+    rclone
     tailscale
     tailscale-systray
     # editors
     neovim
     # dev tools
+    cmake
+    clang
     docker
     docker-compose
+    libclang
     lazydocker
     hurl
     opencode
@@ -39,11 +43,12 @@
 
     # languages
     python3
+    unstable.python314Packages.pip
     openjdk25
     nodejs_24
     bun
     lua
-    gcc
+    # gcc
     go
     rustc
     cargo
@@ -99,6 +104,7 @@
       export LANGUAGE=en_US
     '';
     initContent = ''
+      export LIBCLANG_PATH="${pkgs.libclang.lib}/lib"
       # options
       HISTFILE=~/.zsh_history
       HISTSIZE=10000

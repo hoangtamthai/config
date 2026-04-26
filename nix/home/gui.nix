@@ -4,16 +4,17 @@
 
   home.packages = with pkgs; [
     discord
-    unstable.firefox
     mpv-unwrapped
     obsidian
     steam
-    syncthingtray
     termius
     thunderbird
     ungoogled-chromium
-    unstable.vscode
     vlc
+
+    unstable.firefox
+    unstable.syncthingtray
+    unstable.vscode
     # vscode-runner
     # yaak
     # unstable.zed-editor
@@ -79,5 +80,5 @@
 
     # 5. Ensure subtitles don't stay on screen longer than they should
     sub-gauss=0.0
-'';
+  '';
 }
