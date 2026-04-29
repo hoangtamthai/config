@@ -8,6 +8,7 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ie-r.url = "github:miaupaw/ie-r";
   };
 
   outputs =
@@ -43,7 +44,10 @@
           extraSpecialArgs = {
             inherit inputs unstable;
           };
-          modules = [ ./home/gui.nix ];
+          modules = [
+            ./home/home.nix
+            ./home/gui.nix
+          ];
         };
       };
     };

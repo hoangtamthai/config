@@ -1,4 +1,9 @@
-{ pkgs, unstable, ... }:
+{
+  pkgs,
+  unstable,
+  inputs,
+  ...
+}:
 {
   imports = [ ./home.nix ];
 
@@ -15,11 +20,13 @@
     vlc
     # vscode-runner
     # yaak
-    # unstable.zed-editor
-
     unstable.firefox
+    # unstable.rustdesk
     unstable.syncthingtray-minimal
     unstable.vscode
+    # unstable.zed-editor
+
+    inputs.ie-r.packages.${pkgs.system}.default
   ];
 
   i18n.inputMethod = {
@@ -29,7 +36,6 @@
       fcitx5-unikey
     ];
   };
-
   home.sessionVariables = {
     # GTK_IM_MODULE = "fcitx";
     # QT_IM_MODULE = "fcitx";
@@ -40,7 +46,8 @@
     # --- Video Quality & Performance ---
     profile=gpu-hq              # Uses high-quality shaders and scaling
     vo=x11                      # Uses the GPU for video output (essential)
-    hwdec=auto-safe             # Enables hardware decoding (saves battery/CPU)
+    hwdec=auto-safe             # Enables h
+    ardware decoding (saves battery/CPU)
 
     # --- Subtitle Styling (Cleaner look) ---
     sub-font='sans-serif'       # Changes the font to something modern
