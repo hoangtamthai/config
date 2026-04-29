@@ -3,7 +3,9 @@
   imports = [ ./home.nix ];
 
   home.packages = with pkgs; [
+    copyq
     discord
+    konsave
     mpv-unwrapped
     obsidian
     steam
@@ -11,13 +13,13 @@
     thunderbird
     ungoogled-chromium
     vlc
-
-    unstable.firefox
-    unstable.syncthingtray
-    unstable.vscode
     # vscode-runner
     # yaak
     # unstable.zed-editor
+
+    unstable.firefox
+    unstable.syncthingtray-minimal
+    unstable.vscode
   ];
 
   i18n.inputMethod = {

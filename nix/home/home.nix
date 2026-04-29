@@ -21,12 +21,14 @@
     zsh-autocomplete
     # tools
     kanata
+    fastfetch
     ffmpeg
     oh-my-posh
     imagemagick
     rclone
     tailscale
     tailscale-systray
+    unstable.syncthing
     # editors
     neovim
     # dev tools
