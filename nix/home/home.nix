@@ -38,7 +38,7 @@
       libclang
       lazydocker
       hurl
-      opencode
+      unstable.opencode
       unstable.pnpm
       sqlite
 

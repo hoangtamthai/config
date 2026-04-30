@@ -13,7 +13,7 @@
     konsave
     mpv-unwrapped
     obsidian
-    steam
+    # steam
     termius
     thunderbird
     ungoogled-chromium
