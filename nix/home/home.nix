@@ -39,6 +39,7 @@
       lazydocker
       hurl
       unstable.opencode
+      unstable.pi-coding-agent
       unstable.pnpm
       sqlite
 
