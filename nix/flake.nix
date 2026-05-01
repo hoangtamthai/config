@@ -9,6 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     ie-r.url = "github:miaupaw/ie-r";
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   outputs =
@@ -21,6 +22,7 @@
     }@inputs:
     let
       system = "x86_64-linux";
+      # Base pkgs
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;

@@ -1,4 +1,12 @@
-{ pkgs, unstable, ... }:
+{
+  pkgs,
+  unstable,
+  inputs,
+  ...
+}:
+let
+  agents = inputs.llm-agents.packages.${pkgs.system};
+in
 {
   home = {
     username = "tam";
@@ -38,8 +46,8 @@
       libclang
       lazydocker
       hurl
-      unstable.opencode
-      unstable.pi-coding-agent
+      agents.opencode
+      agents.pi
       unstable.pnpm
       sqlite
 
@@ -96,6 +104,7 @@
         g = "git";
         hms = "home-manager switch --flake ~/config/nix/.#tam-gui";
         ncg = "nix-collect-garbage -d";
+        vi = "nvim";
       };
       loginExtra = ''
         if [ -d "$HOME/.nix-profile/bin" ] ; then PATH="$HOME/.nix-profile/bin:$PATH"
