@@ -107,7 +107,8 @@ in
         vi = "nvim";
       };
       loginExtra = ''
-        if [ -d "$HOME/.nix-profile/bin" ] ; then PATH="$HOME/.nix-profile/bin:$PATH"
+        if [ -d "$HOME/.nix-profile/bin" ] ; then 
+          PATH="$HOME/.nix-profile/bin:$PATH"
         fi
 
         if [ -d "$HOME/.nix-profile/share/applications" ] ; then
@@ -140,6 +141,7 @@ in
           fi
         }
         loadenv
+        export PATH=$HOME/.local/bin:$PATH
 
         # options
         HISTFILE=~/.zsh_history
