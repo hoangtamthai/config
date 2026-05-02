@@ -11,6 +11,10 @@
 user_pref("network.buffer.cache.size", 262144); // 256 kb; default=32768 (32 kb)
 user_pref("network.buffer.cache.count", 128); // default=24
 
+// LINUX PERFORMANCE
+// user_pref("gfx.webrender.all", true);
+// user_pref("layers.acceleration.force-enabled", true);
+
 // DNS
 user_pref(
   "network.trr.uri",
@@ -42,7 +46,6 @@ user_pref("image.mem.decode_bytes_at_a_time", 32768);
 user_pref("browser.aboutConfig.showWarning", false);
 //Instant start-up
 user_pref("browser.startup.preXulSkeletonUI", false);
-// user_pref("general.smoothScroll", true);
 // user_pref("general.smoothScroll", true);
 
 //Snappier tooltips

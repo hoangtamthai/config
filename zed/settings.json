@@ -3,35 +3,19 @@
 {
   "language_models": {
     "openai_compatible": {
-      "Opencode": {
-        "api_url": "https://opencode.ai/zen/go/v1/",
-        "available_models": [
-          {
-            "name": "minimax-m2.5-free",
-            "max_tokens": 200000,
-            "max_output_tokens": 32000,
-            "max_completion_tokens": 200000,
-            "capabilities": {
-              "tools": true,
-              "images": false,
-              "parallel_tool_calls": false,
-              "prompt_cache_key": false,
-              "chat_completions": true,
-              "interleaved_reasoning": false
-            }
-          }
-        ]
-      }
+      
     }
   },
   "session": {
     "trust_all_worktrees": true
   },
   "agent": {
+    "default_profile": "write",
+    "dock": "right",
     "default_model": {
-      "provider": "openrouter",
-      "model": "stepfun/step-3.5-flash:free",
-      "enable_thinking": true
+      "provider": "opencode",
+      "model": "minimax-m2.5-free",
+      "enable_thinking": false
     },
     "favorite_models": [],
     "model_parameters": []

@@ -1,23 +1,6 @@
 // Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
+// https://zed.dev/docs/key-bindings
 [
-  {
-    "context": "Workspace",
-    "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    }
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      // "j k": "vim::NormalBefore"
-    }
-  },
   {
     "context": "(VimControl && !menu)",
     "bindings": {
@@ -145,6 +128,11 @@
     "context": "Editor",
     "bindings": {
       "ctrl-l": "agent::ToggleFocus"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-l": "agent::Toggle"
     }
   }
 ]
