@@ -122,13 +122,25 @@ in
         # Set XDG_DATA_DIRS for GUI applications
         export XDG_DATA_DIRS="$HOME/.nix-profile/share:/nix/var/nix/profiles/default/share:/usr/local/share:/usr/share"
         export NIX_PROFILE="$HOME/.nix-profile"
+        export LIBCLANG_PATH="${pkgs.libclang.lib}/lib"
 
         # Set locale
         export LANG=en_US.UTF-8
         export LANGUAGE=en_US
       '';
       initContent = ''
-        export LIBCLANG_PATH="${pkgs.libclang.lib}/lib"
+        # load environment variables from ~/.env
+        loadenv() {
+          if [ -f ~/.env ]; then
+            set -a
+            source ~/.env
+            set +a
+          else
+            echo "~/.env not found"
+          fi
+        }
+        loadenv
+
         # options
         HISTFILE=~/.zsh_history
         HISTSIZE=10000
@@ -153,9 +165,9 @@ in
         zstyle ':autocomplete:*' min-input 1
         zstyle ':autocomplete:*' add-semicolon no
         # menu selection
-        bindkey -M menuselect '\r' .accept-line
-        bindkey               '^I' expand-or-complete 
-        bindkey -M menuselect '^I' menu-complete
+        bindkey -M menuselect '\r'   .accept-line
+        bindkey               '^I'   expand-or-complete 
+        bindkey -M menuselect '^I'   menu-complete
         bindkey -M menuselect '^[[D' .backward-char '^[OD' .backward-char
         bindkey -M menuselect '^[[C' .forward-char  '^[OC' .forward-char
       '';
