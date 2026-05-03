@@ -46,8 +46,7 @@
     # --- Video Quality & Performance ---
     profile=gpu-hq              # Uses high-quality shaders and scaling
     vo=x11                      # Uses the GPU for video output (essential)
-    hwdec=auto-safe             # Enables h
-    ardware decoding (saves battery/CPU)
+    hwdec=auto-safe             # Enables hardware decoding (saves battery/CPU)
 
     # --- Subtitle Styling (Cleaner look) ---
     sub-font='sans-serif'       # Changes the font to something modern
