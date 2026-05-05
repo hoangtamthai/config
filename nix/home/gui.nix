@@ -11,6 +11,8 @@
     copyq
     discord
     konsave
+    # miktex
+    texliveFull
     mpv-unwrapped
     obsidian
     # steam
@@ -18,6 +20,7 @@
     thunderbird
     ungoogled-chromium
     vlc
+    wireguard-tools
     # vscode-runner
     # yaak
     unstable.firefox

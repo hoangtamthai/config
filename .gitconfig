@@ -1,8 +1,14 @@
 [core]
-	editor = code
+    editor = code
+    autocrlf = input
+    eol = lf
 [user]
-	name = Tam Thai
-	email = tamthai.de@gmail.com
+    name = Tam Thai
+    email = tamthai.de@gmail.com
 [alias]
     lg = log --graph --pretty=format:"%C(#ffc0cb)\\(%ar)\\%C(#ffc0cb)%S\\ %C(#d5c1d9)%s\\ %C(#e75480)\\%d\\ %an" 
     l1 = log --pretty=format:"%C(#e75480)%h\\%C(#ffc0cb)\\ <%an>\\ %C(#d9d9d9)(%cr)\\ %d\\%C(#c0d6de)%s"
+    co = checkout
+    s = status
+[init]
+    defaultBranch = main
