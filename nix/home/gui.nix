@@ -8,12 +8,15 @@
   imports = [ ./home.nix ];
 
   home.packages = with pkgs; [
+    # calibre
     copyq
+    dbeaver-bin
     discord
     konsave
     # miktex
     texliveFull
     mpv-unwrapped
+    normcap
     obsidian
     # steam
     termius
@@ -23,10 +26,12 @@
     wireguard-tools
     # vscode-runner
     # yaak
-    unstable.firefox
+    # unstable.firefox
     # unstable.rustdesk
+    unstable.piper-tts
     unstable.syncthingtray-minimal
     unstable.vscode
+    unstable.zotero
     # unstable.zed-editor
 
     inputs.ie-r.packages.${pkgs.system}.default

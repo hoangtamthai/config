@@ -39,12 +39,14 @@ in
       # editors
       neovim
       # dev tools
+      caddy
       cmake
       clang
       docker
       docker-compose
-      libclang
       lazydocker
+      libclang
+      llama-cpp
       hurl
       agents.opencode
       agents.pi
@@ -121,9 +123,10 @@ in
         fi
 
         # Set XDG_DATA_DIRS for GUI applications
-        export XDG_DATA_DIRS="$HOME/.nix-profile/share:/nix/var/nix/profiles/default/share:/usr/local/share:/usr/share"
+        export XDG_DATA_DIRS="$HOME/.nix-profile/share:/nix/var/nix/profiles/default/share:/usr/local/share:/usr/share:/var/lib/flatpak/exports/share:$HOME/.local/share/flatpak/exports/share"
         export NIX_PROFILE="$HOME/.nix-profile"
         export LIBCLANG_PATH="${pkgs.libclang.lib}/lib"
+        export PNPM_HOME="$HOME/.pnpm-store"
 
         # Set locale
         export LANG=en_US.UTF-8
@@ -141,7 +144,10 @@ in
           fi
         }
         loadenv
+
         export PATH=$HOME/.local/bin:$PATH
+        export PATH=$HOME/.turso:$PATH
+        export PATH=$PNPM_HOME:$PATH
 
         # options
         HISTFILE=~/.zsh_history
@@ -180,6 +186,7 @@ in
     copyq.enable = true;
   };
 
+  xdg.configFile."mimeapps.list".force = true;
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
