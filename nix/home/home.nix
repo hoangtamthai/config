@@ -107,6 +107,7 @@ in
         hms = "home-manager switch --flake ~/config/nix/.#tam-gui";
         ncg = "nix-collect-garbage -d";
         vi = "nvim";
+        ff = "fastfetch";
       };
       loginExtra = ''
         if [ -d "$HOME/.nix-profile/bin" ] ; then 
