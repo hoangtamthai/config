@@ -146,9 +146,12 @@ in
         }
         loadenv
 
+        export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+        export CUDA_HOME="/usr/local/cuda-13.3"
         export PATH=$HOME/.local/bin:$PATH
         export PATH=$HOME/.turso:$PATH
         export PATH=$PNPM_HOME:$PATH
+        export PATH=$CUDA_HOME/bin:$PATH
 
         # options
         HISTFILE=~/.zsh_history
