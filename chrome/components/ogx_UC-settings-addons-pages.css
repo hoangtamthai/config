@@ -210,7 +210,7 @@ button.primary:hover {
 /* Menú principal - lateral izquierda */
         
 #categories{
-    margin: 70px 15px 0 -18px !important; 
+    /* margin: 70px 15px 0 -18px !important;  */
 }
         
 #categories > .category{
