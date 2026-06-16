@@ -5,7 +5,7 @@
   ...
 }:
 let
-  agents = inputs.llm-agents.packages.${pkgs.system};
+  agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   home = {
@@ -105,6 +105,7 @@ in
         ls = "eza";
         g = "git";
         hms = "home-manager switch --flake ~/config/nix/.#tam-gui";
+        nfu = "nix flake update --flake ~/config/nix";
         ncg = "nix-collect-garbage -d";
         vi = "nvim";
         ff = "fastfetch";

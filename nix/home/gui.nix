@@ -33,8 +33,7 @@
     unstable.vscode
     unstable.zotero
     # unstable.zed-editor
-
-    inputs.ie-r.packages.${pkgs.system}.default
+    inputs.ie-r.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   i18n.inputMethod = {
