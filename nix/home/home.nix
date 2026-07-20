@@ -6,6 +6,7 @@
 }:
 let
   agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
+  nixgl = inputs.nixgl.packages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   home = {
