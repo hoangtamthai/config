@@ -1,0 +1,114 @@
+{
+    "apps": [
+        {
+            "Name": "7zip",
+            "Updated": "2026-09-07T01:41:12.6435893-07:00",
+            "Info": "",
+            "Source": "main",
+            "Version": "26.03"
+        },
+        {
+            "Name": "copyq",
+            "Updated": "2026-09-07T01:48:03.3317479-07:00",
+            "Info": "",
+            "Source": "extras",
+            "Version": "16.0.0"
+        },
+        {
+            "Name": "dark",
+            "Updated": "2026-09-07T01:52:48.9693549-07:00",
+            "Info": "",
+            "Source": "main",
+            "Version": "3.14.1"
+        },
+        {
+            "Name": "git",
+            "Updated": "2026-09-07T01:42:11.6189456-07:00",
+            "Info": "",
+            "Source": "main",
+            "Version": "2.55.0.5"
+        },
+        {
+            "Name": "kanata",
+            "Updated": "2026-09-07T01:56:53.806374-07:00",
+            "Info": "",
+            "Source": "extras",
+            "Version": "1.12.0"
+        },
+        {
+            "Name": "oh-my-posh",
+            "Updated": "2026-09-07T01:56:56.4749266-07:00",
+            "Info": "",
+            "Source": "main",
+            "Version": "31.1.3"
+        },
+        {
+            "Name": "powertoys",
+            "Updated": "2026-09-07T01:54:00.7779359-07:00",
+            "Info": "",
+            "Source": "extras",
+            "Version": "0.101.2362.0"
+        },
+        {
+            "Name": "pwsh",
+            "Updated": "2026-09-07T01:57:06.4004591-07:00",
+            "Info": "",
+            "Source": "main",
+            "Version": "7.6.5"
+        },
+        {
+            "Name": "python",
+            "Updated": "2026-09-07T01:58:17.5314738-07:00",
+            "Info": "",
+            "Source": "main",
+            "Version": "3.14.7"
+        },
+        {
+            "Name": "quicklook",
+            "Updated": "2026-09-07T01:58:38.5235995-07:00",
+            "Info": "",
+            "Source": "extras",
+            "Version": "4.5.0"
+        },
+        {
+            "Name": "RobotoMono-NF",
+            "Updated": "2026-09-07T01:58:43.9522418-07:00",
+            "Info": "",
+            "Source": "nerd-fonts",
+            "Version": "3.5.1"
+        },
+        {
+            "Name": "scoop-search",
+            "Updated": "2026-09-07T01:58:44.5626366-07:00",
+            "Info": "",
+            "Source": "main",
+            "Version": "2.1.0"
+        }
+    ],
+    "buckets": [
+        {
+            "Name": "main",
+            "Source": "~\\scoop\\buckets\\main",
+            "Updated": "2026-09-07T01:39:22.491093-07:00",
+            "Manifests": 1641
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2026-09-07T01:41:06-07:00",
+            "Manifests": 2380
+        },
+        {
+            "Name": "nerd-fonts",
+            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
+            "Updated": "2026-08-22T09:30:00-07:00",
+            "Manifests": 367
+        },
+        {
+            "Name": "java",
+            "Source": "https://github.com/ScoopInstaller/Java",
+            "Updated": "2026-09-06T21:44:32-07:00",
+            "Manifests": 336
+        }
+    ]
+}
