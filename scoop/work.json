@@ -1,114 +1,258 @@
 {
-    "apps": [
-        {
-            "Name": "7zip",
-            "Updated": "2026-09-07T01:41:12.6435893-07:00",
-            "Info": "",
-            "Source": "main",
-            "Version": "26.03"
-        },
-        {
-            "Name": "copyq",
-            "Updated": "2026-09-07T01:48:03.3317479-07:00",
-            "Info": "",
-            "Source": "extras",
-            "Version": "16.0.0"
-        },
-        {
-            "Name": "dark",
-            "Updated": "2026-09-07T01:52:48.9693549-07:00",
-            "Info": "",
-            "Source": "main",
-            "Version": "3.14.1"
-        },
-        {
-            "Name": "git",
-            "Updated": "2026-09-07T01:42:11.6189456-07:00",
-            "Info": "",
-            "Source": "main",
-            "Version": "2.55.0.5"
-        },
-        {
-            "Name": "kanata",
-            "Updated": "2026-09-07T01:56:53.806374-07:00",
-            "Info": "",
-            "Source": "extras",
-            "Version": "1.12.0"
-        },
-        {
-            "Name": "oh-my-posh",
-            "Updated": "2026-09-07T01:56:56.4749266-07:00",
-            "Info": "",
-            "Source": "main",
-            "Version": "31.1.3"
-        },
-        {
-            "Name": "powertoys",
-            "Updated": "2026-09-07T01:54:00.7779359-07:00",
-            "Info": "",
-            "Source": "extras",
-            "Version": "0.101.2362.0"
-        },
-        {
-            "Name": "pwsh",
-            "Updated": "2026-09-07T01:57:06.4004591-07:00",
-            "Info": "",
-            "Source": "main",
-            "Version": "7.6.5"
-        },
-        {
-            "Name": "python",
-            "Updated": "2026-09-07T01:58:17.5314738-07:00",
-            "Info": "",
-            "Source": "main",
-            "Version": "3.14.7"
-        },
-        {
-            "Name": "quicklook",
-            "Updated": "2026-09-07T01:58:38.5235995-07:00",
-            "Info": "",
-            "Source": "extras",
-            "Version": "4.5.0"
-        },
-        {
-            "Name": "RobotoMono-NF",
-            "Updated": "2026-09-07T01:58:43.9522418-07:00",
-            "Info": "",
-            "Source": "nerd-fonts",
-            "Version": "3.5.1"
-        },
-        {
-            "Name": "scoop-search",
-            "Updated": "2026-09-07T01:58:44.5626366-07:00",
-            "Info": "",
-            "Source": "main",
-            "Version": "2.1.0"
-        }
-    ],
     "buckets": [
         {
             "Name": "main",
-            "Source": "~\\scoop\\buckets\\main",
-            "Updated": "2026-09-07T01:39:22.491093-07:00",
-            "Manifests": 1641
+            "Source": "https://github.com/ScoopInstaller/Main",
+            "Updated": "2026-09-10T14:40:30+02:00",
+            "Manifests": 1644
         },
         {
             "Name": "extras",
             "Source": "https://github.com/ScoopInstaller/Extras",
-            "Updated": "2026-09-07T01:41:06-07:00",
-            "Manifests": 2380
+            "Updated": "2026-09-10T14:40:25+02:00",
+            "Manifests": 2383
+        },
+        {
+            "Name": "versions",
+            "Source": "https://github.com/ScoopInstaller/Versions",
+            "Updated": "2026-09-10T15:02:25+02:00",
+            "Manifests": 604
         },
         {
             "Name": "nerd-fonts",
             "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
-            "Updated": "2026-08-22T09:30:00-07:00",
+            "Updated": "2026-08-22T18:30:00+02:00",
             "Manifests": 367
+        },
+        {
+            "Name": "nonportable",
+            "Source": "https://github.com/ScoopInstaller/Nonportable",
+            "Updated": "2026-09-09T21:20:15+02:00",
+            "Manifests": 132
         },
         {
             "Name": "java",
             "Source": "https://github.com/ScoopInstaller/Java",
-            "Updated": "2026-09-06T21:44:32-07:00",
+            "Updated": "2026-09-10T06:45:33+02:00",
             "Manifests": 336
+        },
+        {
+            "Name": "games",
+            "Source": "https://github.com/Calinou/scoop-games",
+            "Updated": "2026-09-10T14:57:18+02:00",
+            "Manifests": 419
+        }
+    ],
+    "apps": [
+        {
+            "Updated": "2026-09-07T10:41:12.6435893+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "7zip",
+            "Version": "26.03"
+        },
+        {
+            "Updated": "2026-09-10T10:32:38.2483231+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "caddy",
+            "Version": "2.11.4"
+        },
+        {
+            "Updated": "2026-09-07T14:43:22.1713397+02:00",
+            "Info": "",
+            "Source": "nerd-fonts",
+            "Name": "CascadiaMono-NF",
+            "Version": "3.5.1"
+        },
+        {
+            "Updated": "2026-09-10T09:06:35.3668983+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "codex",
+            "Version": "0.154.0"
+        },
+        {
+            "Updated": "2026-09-07T10:48:03.3317479+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Name": "copyq",
+            "Version": "16.0.0"
+        },
+        {
+            "Updated": "2026-09-07T10:52:48.9693549+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "dark",
+            "Version": "3.14.1"
+        },
+        {
+            "Updated": "2026-09-09T15:05:36.0028149+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Name": "dbeaver",
+            "Version": "26.2.0"
+        },
+        {
+            "Updated": "2026-09-08T09:03:21.260186+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "eza",
+            "Version": "0.23.5"
+        },
+        {
+            "Updated": "2026-09-07T10:42:11.6189456+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "git",
+            "Version": "2.55.0.5"
+        },
+        {
+            "Updated": "2026-09-09T17:14:13.3680369+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "innounp",
+            "Version": "2.71.1"
+        },
+        {
+            "Updated": "2026-09-07T10:56:53.806374+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Name": "kanata",
+            "Version": "1.12.0"
+        },
+        {
+            "Updated": "2026-09-09T10:55:24.7519237+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "neovim",
+            "Version": "0.12.5"
+        },
+        {
+            "Updated": "2026-09-08T10:06:54.0584888+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Name": "obsidian",
+            "Version": "1.13.7"
+        },
+        {
+            "Updated": "2026-09-09T11:03:03.4205938+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "oh-my-posh",
+            "Version": "31.2.1"
+        },
+        {
+            "Updated": "2026-09-09T17:07:34.2935898+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "ollama",
+            "Version": "0.33.3"
+        },
+        {
+            "Updated": "2026-09-09T17:17:09.5949605+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Name": "ollama-full",
+            "Version": "0.33.3"
+        },
+        {
+            "Updated": "2026-09-09T11:03:10.6681847+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "opencode",
+            "Version": "1.18.30"
+        },
+        {
+            "Updated": "2026-09-10T10:17:55.4755102+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "openssl",
+            "Version": "4.0.2"
+        },
+        {
+            "Updated": "2026-09-09T09:41:18.9627991+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Name": "powertoys",
+            "Version": "0.101.2362.0"
+        },
+        {
+            "Updated": "2026-09-08T10:48:29.184408+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Name": "putty",
+            "Version": "0.85"
+        },
+        {
+            "Updated": "2026-09-10T09:10:11.6565223+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "pwsh",
+            "Version": "7.6.6"
+        },
+        {
+            "Updated": "2026-09-09T11:17:23.5963093+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Name": "pycharm",
+            "Version": "2026.2.2-262.10315.174"
+        },
+        {
+            "Updated": "2026-09-09T09:40:07.4748372+02:00",
+            "Info": "",
+            "Source": "versions",
+            "Name": "python311",
+            "Version": "3.11.9"
+        },
+        {
+            "Updated": "2026-09-07T10:58:38.5235995+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Name": "quicklook",
+            "Version": "4.5.0"
+        },
+        {
+            "Updated": "2026-09-10T15:04:39.9845847+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "ripgrep",
+            "Version": "15.2.0"
+        },
+        {
+            "Updated": "2026-09-07T10:58:43.9522418+02:00",
+            "Info": "",
+            "Source": "nerd-fonts",
+            "Name": "RobotoMono-NF",
+            "Version": "3.5.1"
+        },
+        {
+            "Updated": "2026-09-07T10:58:44.5626366+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "scoop-search",
+            "Version": "2.1.0"
+        },
+        {
+            "Updated": "2026-09-10T16:15:48.1437927+02:00",
+            "Info": "",
+            "Source": "main",
+            "Name": "uv",
+            "Version": "0.12.12"
+        },
+        {
+            "Updated": "2026-09-10T15:32:32.1550339+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Name": "windirstat",
+            "Version": "2.8.0"
+        },
+        {
+            "Updated": "2026-09-09T10:58:01.4449003+02:00",
+            "Info": "",
+            "Source": "extras",
+            "Name": "z",
+            "Version": "1.1.14"
         }
     ]
 }
