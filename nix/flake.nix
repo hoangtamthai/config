@@ -28,6 +28,9 @@
       pkgs = import nixpkgs {
         inherit system;
         config.allowUnfree = true;
+        config.permittedInsecurePackages = [
+          "electron-40.10.5"
+        ];
       };
       unstable = import nixpkgs-unstable {
         inherit system;

@@ -48,9 +48,13 @@ in
       lazydocker
       libclang
       llama-cpp
+      lsyncd
       hurl
+
+      agents.codex
       agents.opencode
       agents.pi
+
       unstable.pnpm
       sqlite
 

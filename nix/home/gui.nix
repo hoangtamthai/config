@@ -15,6 +15,7 @@ in
     copyq
     dbeaver-bin
     discord
+    # ghostty
     konsave
     # miktex
     texliveFull
@@ -22,6 +23,7 @@ in
     normcap
     obsidian
     # steam
+    t3code
     termius
     thunderbird
     ungoogled-chromium
@@ -43,16 +45,17 @@ in
   i18n.inputMethod = {
     enable = true;
     type = "fcitx5";
-    fcitx5.addons = with pkgs.kdePackages; [
-      fcitx5-unikey
+    fcitx5.addons = with pkgs; [
+      fcitx5-bamboo
+      kdePackages.fcitx5-configtool
     ];
   };
-  home.sessionVariables = {
-    # GTK_IM_MODULE = "fcitx";
-    # QT_IM_MODULE = "fcitx";
-    # INPUT_METHOD = "fcitx";
-    XMODIFIERS = "@im=fcitx";
-  };
+  # home.sessionVariables = {
+  #   # GTK_IM_MODULE = "fcitx";
+  #   # QT_IM_MODULE = "fcitx";
+  #   # INPUT_METHOD = "fcitx";
+  #   XMODIFIERS = "@im=ibus";
+  # };
   home.file.".config/mpv/mpv.conf".text = ''
     # --- Video Quality & Performance ---
     profile=gpu-hq              # Uses high-quality shaders and scaling
