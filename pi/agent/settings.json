@@ -1,0 +1,45 @@
+{
+  "collapseChangelog": false,
+  "compaction": {
+    "enabled": true,
+    "keepRecentTokens": 50000,
+    "reserveTokens": 20000
+  },
+  "defaultModel": "z-ai/glm-5.3-free",
+  "defaultProvider": "tokenrouter",
+  "defaultThinkingLevel": "high",
+  "doubleEscapeAction": "tree",
+  "enableInstallTelemetry": false,
+  "enabledModels": [
+    "opencode/big-pickle",
+    "openrouter/openrouter/free",
+    "opencode/mimo-v2.5-free",
+    "ollama/qwen3.5:4b",
+    "openrouter/inclusionai/ling-3.0-flash-vl:free",
+    "tokenrouter/z-ai/glm-5.3-free"
+  ],
+  "followUpMode": "one-at-a-time",
+  "hideThinkingBlock": true,
+  "lastChangelogVersion": "0.84.4",
+  "packages": [
+    "npm:@ollama/pi-web-search",
+    "npm:@ff-labs/pi-fff",
+    "npm:pi-orcarouter",
+    "npm:@realvendex/pi-token-router"
+  ],
+  "quietStartup": true,
+  "retry": {
+    "baseDelayMs": 2000,
+    "enabled": true,
+    "maxRetries": 3,
+    "provider": {
+      "maxRetryDelayMs": 20000
+    }
+  },
+  "showHardwareCursor": false,
+  "steeringMode": "one-at-a-time",
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "theme": "rose-quartz"
+}
