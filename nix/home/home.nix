@@ -54,6 +54,7 @@ in
       agents.codex
       agents.opencode
       agents.pi
+      agents.herdr
 
       unstable.pnpm
       sqlite

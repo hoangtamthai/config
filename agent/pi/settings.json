@@ -25,7 +25,8 @@
     "npm:@ollama/pi-web-search",
     "npm:@ff-labs/pi-fff",
     "npm:pi-orcarouter",
-    "npm:@realvendex/pi-token-router"
+    "npm:@realvendex/pi-token-router",
+    "npm:pi-mcp-adapter"
   ],
   "quietStartup": true,
   "retry": {
