@@ -51,7 +51,6 @@ in
       lsyncd
       hurl
 
-      agents.codex
       agents.opencode
       agents.pi
       agents.herdr
