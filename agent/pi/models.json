@@ -1,5 +1,48 @@
 {
   "providers": {
+    "litellm": {
+      "api": "openai-completions",
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LiteLLM",
+      "baseUrl": "https://litellm.tamthai.de/v1",
+      "models": [
+        {
+          "id": "free-coding",
+          "name": "Free Coding",
+          "contextWindow": 131072,
+          "input": ["text"],
+          "reasoning": true
+        },
+        {
+          "id": "free-fast",
+          "name": "Free Fast",
+          "contextWindow": 131072,
+          "input": ["text"],
+          "reasoning": false
+        }
+      ]
+    },
+    "llama": {
+      "baseUrl": "http://127.0.0.1:8088/v1",
+      "api": "openai-completions",
+      "apiKey": "no-key",
+      "models": [
+        {
+          "id": "bartowski/MiniCPM5-2B-GGUF:Q4_K_M",
+          "name": "Llama Local",
+          "reasoning": false,
+          "input": ["text"],
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          },
+          "contextWindow": 32768,
+          "maxTokens": 8192
+        }
+      ]
+    },
     "ollama": {
       "api": "openai-completions",
       "apiKey": "ollama",
@@ -9,18 +52,13 @@
           "_launch": true,
           "contextWindow": 262144,
           "id": "qwen3.5:4b",
-          "input": [
-            "text",
-            "image"
-          ],
+          "input": ["text", "image"],
           "reasoning": true
         },
         {
           "_launch": true,
           "id": "lfm2.5:8b",
-          "input": [
-            "text"
-          ],
+          "input": ["text"],
           "reasoning": true
         }
       ]

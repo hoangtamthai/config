@@ -1,0 +1,70 @@
+---
+name: web-search
+description: >-
+  Use for general web search queries when the user wants to find information,
+  tutorials, articles, or current news. NOT for library/framework documentation
+  (use find-docs skill for that).
+  
+  Activated when user asks to search the web, find information online, or asks
+  questions like "how do I...", "what is...", "find articles about...".
+  
+  For code documentation, APIs, and framework-specific questions, use the
+  find-docs skill instead (ctx7).
+---
+
+# Web Search with Exa
+
+Use Exa AI for general web searches. For code/library documentation, use 
+the find-docs skill instead.
+
+## API Configuration
+
+Set your Exa API key:
+
+```bash
+export EXA_API_KEY=your_key
+```
+
+Or it can be provided in your agent settings.
+
+## Usage
+
+```bash
+# Quick balanced search (default)
+web-search "query search terms" [numResults]
+
+# Fast search (lower latency)
+web-search "query" --fast
+
+# Deep research (more thorough)
+web-search "query" --deep
+```
+
+## When to Use This Skill
+
+| Use web-search | Use find-docs (ctx7) |
+|---------------|-------------------|
+| General questions | Library/framework docs |
+| Articles, tutorials | API reference |
+| News, trends | Code examples |
+| "How do I use X" for general topics | "How do I use X" for a specific library |
+| Technology comparisons | Framework-specific questions |
+
+## General Examples
+
+```bash
+# Find tutorials on a topic
+web-search "best practices for React state management 2024"
+
+# Search for articles
+web-search "web assembly trends 2024"
+
+# Technology comparison
+web-search "Next.js vs Remix vs Astro comparison"
+```
+
+## Notes
+
+- This skill is for general web discovery
+- For specific library/framework docs, use find-docs (ctx7)
+- exa works without specifying --auto type (balanced by default)

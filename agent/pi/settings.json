@@ -5,8 +5,9 @@
     "keepRecentTokens": 50000,
     "reserveTokens": 20000
   },
-  "defaultModel": "z-ai/glm-5.3-free",
-  "defaultProvider": "tokenrouter",
+  "cacheWarning": "streaming",
+  "defaultModel": "openrouter/free",
+  "defaultProvider": "openrouter",
   "defaultThinkingLevel": "high",
   "doubleEscapeAction": "tree",
   "enableInstallTelemetry": false,
@@ -16,17 +17,20 @@
     "opencode/mimo-v2.5-free",
     "ollama/qwen3.5:4b",
     "openrouter/inclusionai/ling-3.0-flash-vl:free",
-    "tokenrouter/z-ai/glm-5.3-free"
+    "tokenrouter/z-ai/glm-5.3-free",
+    "litellm/auto",
+    "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
   ],
   "followUpMode": "one-at-a-time",
-  "hideThinkingBlock": true,
-  "lastChangelogVersion": "0.84.4",
+  "hideThinkingBlock": false,
+  "lastChangelogVersion": "0.87.0",
   "packages": [
-    "npm:@ollama/pi-web-search",
     "npm:@ff-labs/pi-fff",
-    "npm:pi-orcarouter",
-    "npm:@realvendex/pi-token-router",
-    "npm:pi-mcp-adapter"
+    "npm:pi-context-view",
+    "npm:@dietrichgebert/ponytail",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:pi-blackhole",
+    "npm:@porche/pi-usage"
   ],
   "quietStartup": true,
   "retry": {

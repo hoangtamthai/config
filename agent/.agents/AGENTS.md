@@ -2,7 +2,10 @@
 
 - Don't be too polite or praise too much
 - No extra icons, no emdash
-- Straight to the point, few filler words
+
+## Error Handling
+
+- If there is any error when running tool or mcp, add a new line to AGENTS.md so next time it won't repeat. New line added must end with (E)
 
 ## Coding Style
 
