@@ -29,8 +29,7 @@
     "npm:pi-context-view",
     "npm:@dietrichgebert/ponytail",
     "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:pi-blackhole",
-    "npm:@porche/pi-usage"
+    "npm:pi-blackhole"
   ],
   "quietStartup": true,
   "retry": {
