@@ -1,21 +1,56 @@
 // Zed settings
 // https://zed.dev/docs/configuring-zed
 {
-  "language_models": {
-    "openai_compatible": {
-      
+  "diff_view_style": "split",
+  "agent_ui_font_size": 14.0,
+  "ui_font_family": "RobotoMono Nerd Font",
+  "search": {
+    "center_on_match": true
+  },
+  "gutter": {
+    "folds": false
+  },
+  "enable_language_server": true,
+  "outline_panel": {
+    "dock": "right",
+    "indent_size": 10.0
+  },
+  "ui_font_size": 14.0,
+  "buffer_font_size": 14.0,
+  "cli_default_open_behavior": "existing_window",
+  "agent_servers": {
+    "pi-acp": {
+      "type": "registry"
     }
+  },
+  "language_models": {
+    "openai_compatible": {}
   },
   "session": {
     "trust_all_worktrees": true
   },
   "agent": {
+    "thinking_display": "preview",
+    "tool_permissions": {
+      "default": "allow",
+      "tools": {
+        "create_directory": {
+          "default": "allow"
+        },
+        "delete_path": {
+          "default": "allow"
+        },
+        "terminal": {
+          "default": "allow"
+        }
+      }
+    },
     "default_profile": "write",
     "dock": "right",
     "default_model": {
-      "provider": "opencode",
-      "model": "minimax-m2.5-free",
-      "enable_thinking": false
+      "provider": "openrouter",
+      "model": "stealth/space-bunny-alpha",
+      "enable_thinking": true
     },
     "favorite_models": [],
     "model_parameters": []
@@ -30,14 +65,16 @@
     "dock": "bottom"
   },
   "project_panel": {
+    "indent_size": 10.0,
     "dock": "left"
   },
   "git_panel": {
-    "tree_view": true,
+    "dock": "left",
+    "tree_view": false,
     "sort_by_path": false
   },
   "preferred_line_length": 80,
-  "soft_wrap": "preferred_line_length",
+  "soft_wrap": "prefer_line",
   "show_wrap_guides": true,
   "show_whitespaces": "boundary",
   "hard_tabs": false,
@@ -48,7 +85,7 @@
   "disable_ai": false,
   "use_system_path_prompts": true,
   "edit_predictions": {
-    "provider": "open_ai_compatible_api",
+    "provider": "zed",
     "open_ai_compatible_api": {
       "max_output_tokens": 64,
       "model": "qwen/qwen3-coder:free",
@@ -59,9 +96,28 @@
   "show_edit_predictions": true,
   "show_completions_on_input": true,
   "terminal": {
-    "font_size": 14.0,
+    "detect_venv": {
+      "on": {
+        // Default directories to search for virtual environments, relative
+        // to the current working directory. We recommend overriding this
+        // in your project's settings, rather than globally.
+        "directories": [
+          ".env",
+          "env",
+          ".venv",
+          "venv"
+        ],
+        // Can also be `csh`, `fish`, and `nushell`
+        "activate_script": "default"
+      }
+    },
+    "font_size": 12.0,
     "shell": "system",
-    "dock": "right"
+    "dock": "right",
+    "env": {
+      "BACKEND_PORT": "8888",
+      "FRONTEND_PORT": "3333"
+    },
   },
   "helix_mode": false,
   "buffer_font_family": "RobotoMono Nerd Font",
@@ -74,12 +130,10 @@
     "metrics": false
   },
   "vim_mode": true,
-  "ui_font_size": 16.0,
-  "buffer_font_size": 16.0,
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Rosévin"
+    "dark": "Ayu Dark"
   },
   "experimental.theme_overrides": {
     "background": "#1a1117",
@@ -87,16 +141,17 @@
     "editor.subheader.background": "#1a1117",
     "info.background": "#281118",
     "editor.background": "#1a1117",
-    "panel.background": "#19030bf5",
+    "panel.background": "#241118",
     "editor.foreground": "#ea95b1",
     "status_bar.background": "#280812",
     "title_bar.background": "#281118",
-    "text": "#e99a9b",
+    "text": "#e2c5d2",
     "text.muted": "#dedededd",
     "toolbar.background": "#281118",
-    "tab_bar.background": "#281118",
     "title_bar.inactive_background": "#281118",
+    "tab_bar.background": "#281118",
     "tab.active_background": "#560f23",
+    "tab.inactive_background": "#280812",
     "scrollbar.track.border": "#281118",
     "editor.gutter.background": "#281118",
     "ignored.background": "#281118",
@@ -104,12 +159,11 @@
     "surface.background": "#280812",
     "element.disabled": "#280812",
     "ghost_element.disabled": "#280812",
-    "tab.inactive_background": "#280812",
     "element.selected": "#45222e",
     "border.variant": "#642130",
     "element.hover": "#642130",
     "element.background": "#1a1117",
-    "border": "#ea95b1",
+    "border": "#333333",
     "ghost_element.hover": "#642130",
     "ghost_element.active": "#884444",
     "ghost_element.selected": "#884444",
@@ -127,7 +181,7 @@
     "icon.muted": "#9498a1",
     "icon.disabled": "#6D7A72",
     "icon.placeholder": "#9498a1",
-    "icon.accent": "#fe7c8e",
+    "icon.accent": "#fe8c8e",
     "search.match_background": "#fe7c8e66",
     "panel.focused_border": "#fe7c8e",
     "pane.focused_border": null,
@@ -384,16 +438,54 @@
     }
   },
   "formatter": [
-    { "language_server": { "name": "rust-analyzer" } },
+    {
+      "language_server": {
+        "name": "rust-analyzer"
+      }
+    },
     {
       "external": {
         "command": "sed",
-        "arguments": ["-e", "s/ *$//"]
+        "arguments": [
+          "-e",
+          "s/ *$//"
+        ]
       }
     },
-    { "language_server": { "name": "metals" } }
+    {
+      "language_server": {
+        "name": "metals"
+      }
+    }
   ],
+  "languages": {
+    "Python": {
+      "language_servers": [
+        // Enable ty, disable basedpyright, and enable all
+        // other registered language servers (ruff, pylsp, pyright).
+        "ty",
+        "basedpyright",
+        "pylsp",
+        "pyright"
+      ]
+    }
+  },
   "lsp": {
+    "basedpyright": {
+      "settings": {
+        "basedpyright": {
+          "analysis": {
+            "diagnosticMode": "workspace",
+            "inlayHints": {
+              "callArgumentNames": false
+            }
+          }
+        }
+      }
+    },
+    "pylsp": {
+      "settings": {}
+    },
     "rust-analyzer": {
       "initialization_options": {
         "cargo": {

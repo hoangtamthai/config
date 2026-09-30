@@ -134,5 +134,50 @@
     "bindings": {
       "ctrl-l": "agent::Toggle"
     }
+  },
+  {
+    "context": "Editor",
+    "bindings": {
+      "alt-shift-f": "editor::Format"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-d": "debugger::Rerun"
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "f5": "debugger::Rerun"
+    }
+  },
+  {
+    "context": "(vim_mode == helix_normal || vim_mode == helix_select) && !menu",
+    "unbind": {
+      "alt-d": "editor::Delete"
+    }
+  },
+  {
+    "context": "ProjectPanel",
+    "unbind": {
+      "alt-d": "project_panel::CompareMarkedFiles"
+    }
+  },
+  {
+    "bindings": {
+      "alt-shift-d": "debugger::Stop"
+    }
+  },
+  {
+    "unbind": {
+      "shift-f5": "debugger::Stop"
+    }
+  },
+  {
+    "bindings": {
+      "ctrl-m": "debug_panel::Toggle"
+    }
   }
 ]
