@@ -4,10 +4,6 @@
   inputs,
   ...
 }:
-let
-  agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
-  nixgl = inputs.nixgl.packages.${pkgs.stdenv.hostPlatform.system};
-in
 {
   imports = [ ./home.nix ];
   home.packages = with pkgs; [

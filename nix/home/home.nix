@@ -6,7 +6,6 @@
 }:
 let
   agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
-  nixgl = inputs.nixgl.packages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   home = {
@@ -51,16 +50,16 @@ in
       lsyncd
       hurl
 
-      agents.opencode
-      agents.pi
+      # agents.opencode
+      # agents.pi
       agents.herdr
 
       unstable.pnpm
       sqlite
 
       # languages
-      python3
-      unstable.python314Packages.pip
+      # python3
+      # unstable.python314Packages.pip
       openjdk25
       nodejs_24
       bun
@@ -72,6 +71,7 @@ in
 
       # nix
       nix
+      nixd
       nil
       nixfmt
 
@@ -116,7 +116,7 @@ in
         ff = "fastfetch";
       };
       loginExtra = ''
-        if [ -d "$HOME/.nix-profile/bin" ] ; then 
+        if [ -d "$HOME/.nix-profile/bin" ] ; then
           PATH="$HOME/.nix-profile/bin:$PATH"
         fi
 
@@ -158,6 +158,9 @@ in
         export PATH=$HOME/.turso:$PATH
         export PATH=$PNPM_HOME:$PATH
         export PATH=$CUDA_HOME/bin:$PATH
+        export PATH=$HOME/.cache/npm/global/bin:$PATH
+        export PATH=/home/tam/.opencode/bin:$PATH
+
 
         # options
         HISTFILE=~/.zsh_history
@@ -179,12 +182,12 @@ in
         source $NIX_PROFILE/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
         zstyle ':completion:*' completer _expand _complete _ignored _approximate _expand_alias
         zstyle ':autocomplete:*complete*:*' insert-unambiguous yes
-        zstyle ':autocomplete:*' default-context history-incremental-search-backward 
+        zstyle ':autocomplete:*' default-context history-incremental-search-backward
         zstyle ':autocomplete:*' min-input 1
         zstyle ':autocomplete:*' add-semicolon no
         # menu selection
         bindkey -M menuselect '\r'   .accept-line
-        bindkey               '^I'   expand-or-complete 
+        bindkey               '^I'   expand-or-complete
         bindkey -M menuselect '^I'   menu-complete
         bindkey -M menuselect '^[[D' .backward-char '^[OD' .backward-char
         bindkey -M menuselect '^[[C' .forward-char  '^[OC' .forward-char
