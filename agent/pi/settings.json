@@ -2,34 +2,30 @@
   "collapseChangelog": false,
   "compaction": {
     "enabled": true,
-    "keepRecentTokens": 50000,
+    "keepRecentTokens": 40000,
     "reserveTokens": 20000
   },
   "cacheWarning": "streaming",
-  "defaultModel": "openrouter/free",
+  "defaultModel": "stealth/space-bunny-alpha",
   "defaultProvider": "openrouter",
   "defaultThinkingLevel": "high",
   "doubleEscapeAction": "tree",
   "enableInstallTelemetry": false,
   "enabledModels": [
     "opencode/big-pickle",
-    "openrouter/openrouter/free",
-    "opencode/mimo-v2.5-free",
-    "ollama/qwen3.5:4b",
-    "openrouter/inclusionai/ling-3.0-flash-vl:free",
-    "tokenrouter/z-ai/glm-5.3-free",
-    "litellm/auto",
-    "openrouter/nvidia/nemotron-3-ultra-550b-a55b:free"
+    "openrouter/stealth/space-bunny-alpha:stealth"
   ],
-  "followUpMode": "one-at-a-time",
-  "hideThinkingBlock": false,
-  "lastChangelogVersion": "0.87.0",
+  "followUpMode": "all",
+  "hideThinkingBlock": true,
+  "lastChangelogVersion": "0.99.1",
   "packages": [
     "npm:@ff-labs/pi-fff",
     "npm:pi-context-view",
     "npm:@dietrichgebert/ponytail",
     "npm:@juicesharp/rpiv-ask-user-question",
-    "npm:pi-blackhole"
+    "npm:pi-blackhole",
+    "npm:pi-subagents",
+    "npm:pi-provider-litellm"
   ],
   "quietStartup": true,
   "retry": {
@@ -41,9 +37,14 @@
     }
   },
   "showHardwareCursor": false,
-  "steeringMode": "one-at-a-time",
+  "steeringMode": "all",
   "terminal": {
     "showTerminalProgress": true
   },
-  "theme": "rose-quartz"
+  "theme": "rose-quartz",
+  "outputPad": 1,
+  "editorPaddingX": 0,
+  "autocompleteMaxVisible": 5,
+  "showCacheMissNotices": true,
+  "tuiMode": "regular"
 }

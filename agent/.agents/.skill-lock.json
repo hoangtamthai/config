@@ -28,6 +28,24 @@
       "skillFolderHash": "89a8fede359cb48c66f1af44c5aa8fc07b82cded",
       "installedAt": "2026-04-30T16:22:10.010Z",
       "updatedAt": "2026-04-30T16:22:10.010Z"
+    },
+    "improve": {
+      "source": "shadcn/improve",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/shadcn/improve.git",
+      "skillPath": "skills/improve/SKILL.md",
+      "skillFolderHash": "7d77d76815e6deb704427f17f6e393f55e3cb6da",
+      "installedAt": "2026-09-23T22:03:27.209Z",
+      "updatedAt": "2026-09-23T22:03:27.209Z"
+    },
+    "reladraw": {
+      "source": "reladraw/reladraw",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/reladraw/reladraw.git",
+      "skillPath": ".claude/skills/reladraw/SKILL.md",
+      "skillFolderHash": "1f33062f39a8426a776c499bccbc5dd20fe6e077",
+      "installedAt": "2026-09-27T21:29:30.991Z",
+      "updatedAt": "2026-09-27T21:29:30.991Z"
     }
   },
   "dismissed": {
@@ -35,17 +53,16 @@
   },
   "lastSelectedAgents": [
     "amp",
-    "antigravity",
     "cline",
     "codex",
     "cursor",
-    "deepagents",
-    "dexto",
-    "firebender",
+    "droid",
     "gemini-cli",
     "github-copilot",
-    "kimi-cli",
+    "kilo",
+    "kimi-code-cli",
     "opencode",
-    "warp"
+    "warp",
+    "zed"
   ]
 }

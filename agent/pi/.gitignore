@@ -6,3 +6,9 @@ auth.json
 trust.json
 mcp-cache.json
 mcp.json
+pi-blackhole
+pi-openrouter
+pi-subagents
+litellm-mcp-pauses
+missions
+mcp-auth.json

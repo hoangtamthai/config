@@ -1,11 +1,11 @@
 ---
 name: tinyfish-lite
-description: ALWAYS Use TinyFish for WEB search and fetching URLs. Use whenever the user asks to search, find, look up, research, fetch page content, or get information from the web.
+description: ALWAYS Use TinyFish for WEB search query and fetching URLs. Use whenever the user asks to search, find, look up, research, fetch page content, or get information from the web.
 ---
 
 # TinyFish Lite
 
-TinyFish Lite provides web search and URL fetching without browser automation. For agent/browser control, use the `use-tinyfish` skill.
+TinyFish Lite provides web search query and URL fetching without browser automation. For agent/browser control, use the `use-tinyfish` skill.
 
 If not installed: `npm install -g @tiny-fish/cli`
 If not authenticated: `tinyfish auth login --source openclaw` or set `TINYFISH_API_KEY` env var.
@@ -16,7 +16,7 @@ If not authenticated: `tinyfish auth login --source openclaw` or set `TINYFISH_A
 
 Use TinyFish Lite for:
 
-- **Search**: find URLs, current facts, docs, pricing, product details, news, research, comparisons.
+- **Search Query**: find URLs, current facts, docs, pricing, product details, news, research, comparisons.
 - **Fetch**: read, summarize, extract content from known URLs.
 
 Do NOT use for page interaction (clicking, forms, navigation) — use `use-tinyfish` instead.
@@ -25,10 +25,10 @@ Do NOT use for page interaction (clicking, forms, navigation) — use `use-tinyf
 
 ## Tools
 
-| Tool | When to use |
-|------|-------------|
-| **search** | Find URLs, facts, docs, pricing, comparisons, source-backed answers |
-| **fetch** | Read clean content from known URLs |
+| Tool             | When to use                                                         |
+| ---------------- | ------------------------------------------------------------------- |
+| **search query** | Find URLs, facts, docs, pricing, comparisons, source-backed answers |
+| **fetch**        | Read clean content from known URLs                                  |
 
 Escalation path for this skill: **search → fetch**. For dynamic/interactive pages, escalate to `use-tinyfish`.
 
@@ -38,7 +38,7 @@ Escalation path for this skill: **search → fetch**. For dynamic/interactive pa
 
 ### `tinyfish search query`
 
-Web search. Returns ranked results with titles, URLs, and snippets.
+Web search query. Returns ranked results with titles, URLs, and snippets.
 
 ```bash
 tinyfish search query "<query>" [--location <hint>] [--language <hint>] [--pretty]

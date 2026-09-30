@@ -1,29 +1,7 @@
 {
   "providers": {
-    "litellm": {
-      "api": "openai-completions",
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "LiteLLM",
-      "baseUrl": "https://litellm.tamthai.de/v1",
-      "models": [
-        {
-          "id": "free-coding",
-          "name": "Free Coding",
-          "contextWindow": 131072,
-          "input": ["text"],
-          "reasoning": true
-        },
-        {
-          "id": "free-fast",
-          "name": "Free Fast",
-          "contextWindow": 131072,
-          "input": ["text"],
-          "reasoning": false
-        }
-      ]
-    },
     "llama": {
-      "baseUrl": "http://127.0.0.1:8088/v1",
+      "baseUrl": "http://127.0.0.1:9331/v1",
       "api": "openai-completions",
       "apiKey": "no-key",
       "models": [

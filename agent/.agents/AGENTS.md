@@ -3,10 +3,6 @@
 - Don't be too polite or praise too much
 - No extra icons, no emdash
 
-## Error Handling
-
-- If there is any error when running tool or mcp, add a new line to AGENTS.md so next time it won't repeat. New line added must end with (E)
-
 ## Coding Style
 
 ### Minimal Comments
@@ -25,3 +21,12 @@
 - Use Guard Clause | return early
 - Keep functions short and side-effect free
 - Reuse functions | wrap repeated patterns into one
+
+## Error Handling
+
+- If there is any error when running tool or mcp, add a new line to AGENTS.md so next time it won't repeat. New line added must end with (E) under ## Fixes. If it a workspace error, add it to the workspace's AGENTS.md
+
+## Fixes
+
+- Quote shell commands carefully to avoid unmatched single quotes (E)
+- Do not assume /home/tam is a git repository when validating changes (E)

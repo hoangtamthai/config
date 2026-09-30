@@ -28,7 +28,7 @@ function textFromContent(content: unknown) {
 
 function copyToClipboard(text: string) {
   return new Promise<void>((resolve, reject) => {
-    const child = spawn("pbcopy");
+    const child = spawn("xclip", ["-selection", "clipboard"]);
     let stderr = "";
 
     child.stderr.on("data", (chunk) => {
@@ -40,7 +40,7 @@ function copyToClipboard(text: string) {
       if (code === 0) {
         resolve();
       } else {
-        reject(new Error(stderr.trim() || `pbcopy exited with code ${code}`));
+        reject(new Error(stderr.trim() || `xclip exited with code ${code}`));
       }
     });
 
