@@ -4,8 +4,42 @@
     "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[yaml]": {
-    "editor.defaultFormatter": "redhat.vscode-yaml"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[xml]": {
+    "editor.defaultFormatter": "redhat.vscode-xml"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.foldingImportsByDefault": false,
+    "editor.formatOnType": false,
+    "editor.formatOnSave": false,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "html.format.contentUnformatted": "pre,code,textarea",
+  "[cpp]": {
+    "editor.defaultFormatter": "ms-vscode.cpptools"
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "[java]": {
+    "editor.defaultFormatter": "redhat.java"
+  },
+  "[nix]": {
+    "editor.defaultFormatter": "jnoortheen.nix-ide"
+  },
+  "[sql]": {
+    "editor.defaultFormatter": "inferrinizzard.prettier-sql-vscode"
+  },
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+
+  // Code runner
   "code-runner.executorMap": {
     "FortranFreeForm": "cd $dir && gfortran $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt",
     "ahk": "autohotkey",
@@ -28,6 +62,7 @@
     "groovy": "groovy",
     "haskell": "runhaskell",
     "haxe": "haxe --cwd $dirWithoutTrailingSlash --run $fileNameWithoutExt",
+    "hurl": "env $(cat ~/projects/yastream/.hurl/hurl.env | xargs) hurl $dir$fileName -i",
     "java": "cd $dir && javac $fileName && java $fileName",
     "javascript": "node",
     "julia": "julia",
@@ -102,22 +137,23 @@
   "editor.bracketPairColorization.enabled": false,
   "editor.cursorSurroundingLines": 10,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.foldingImportsByDefault": true,
   "editor.fontFamily": "RobotoMono Nerd Font",
   "editor.fontSize": 16,
-  "editor.formatOnPaste": true,
   "editor.guides.bracketPairs": "active",
   "editor.hover.delay": 500,
   "editor.inlineSuggest.enabled": true,
   "editor.lineNumbers": "relative",
-  "editor.minimap.maxColumn": 80,
-  "editor.minimap.showSlider": "mouseover",
+  "editor.minimap.maxColumn": 120,
+  "editor.minimap.showSlider": "always",
   "editor.minimap.size": "fill",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 120,
   "editor.renderWhitespace": "all",
+  "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.rulers": [
     {
       "color": "#f18ab585",
-      "column": 80
+      "column": 120
     }
   ],
   "editor.semanticHighlighting.enabled": true,
@@ -140,8 +176,11 @@
       "type": "#cd87ed",
       "parameter": "#e2c5d2",
       "namespace": "#e2c5d2",
+      "variable": "#e2c5d2",
       "variable.defaultLibrary": "#db6698",
-      "keyword": "#db6698"
+      "keyword": "#db6698",
+      "selfParameter": "#db6698",
+      "*.builtin": "#db6698"
     }
   },
   "editor.stickyScroll.enabled": true,
@@ -153,6 +192,8 @@
     "keywords": "#db6698",
     "numbers": "#cd87ed",
     "strings": "#ce9178",
+    "types": "#e2c5d2",
+    "variables": "#e2c5d2",
     "textMateRules": [
       {
         "name": "Class",
@@ -163,14 +204,25 @@
       },
       {
         "name": "Keyword",
-        "scope": ["entity.name.function"],
+        "scope": [
+          "entity.name.section.markdown",
+          "entity.name.function",
+          "keyword",
+          "log.info"
+        ],
         "settings": {
           "foreground": "#db6698"
         }
       },
       {
-        "name": "Tags",
-        "scope": ["keyword.other", "entity.name.tag"],
+        "name": "Other",
+        "scope": [
+          "entity.name.tag",
+          "text",
+          "variable.parameter",
+          "entity.other.attribute-name",
+          "other"
+        ],
         "settings": {
           "foreground": "#e2c5d2"
         }
@@ -178,10 +230,12 @@
       {
         "name": "Attributes, Constant",
         "scope": [
-          "entity.other.attribute-name",
           "constant.language.json.comments",
           "constant.language.boolean",
-          "types"
+          "constant.language",
+          "types",
+          "log.date",
+          "support.type.primitive"
         ],
         "settings": {
           "foreground": "#cd87ed"
@@ -195,7 +249,8 @@
           "punctuation.definition",
           "punctuation.definition.template-expression",
           "punctuation",
-          "meta.brace"
+          "meta.brace",
+          "meta.fstring"
         ],
         "settings": {
           "foreground": "#9e9e9e"
@@ -203,32 +258,32 @@
       },
       {
         "name": "String",
-        "scope": ["string.quoted.double.json.comments"],
+        "scope": [
+          "string.quoted.double.json.comments",
+          "markup.inline.raw.string.markdown"
+        ],
         "settings": {
           "foreground": "#ce9178"
         }
       }
-    ],
-    "types": "#e2c5d2",
-    "variables": "#e2c5d2"
+    ]
   },
-  "editor.wordWrap": "wordWrapColumn",
 
   // File
   "emmet.excludeLanguages": ["markdown", "php"],
+  "files.autoSave": "onFocusChange",
   "files.associations": {
     "*.embeddedhtml": "html",
     "*.rmd": "markdown",
     "*.sql": "sql"
   },
-  "files.autoSave": "onFocusChange",
   "files.eol": "\n",
   "files.exclude": {
     "**/.classpath": true,
     "**/.factorypath": true,
     "**/.git": false,
-    "**/.project": true,
-    "**/.settings": true
+    "**/.project": true
+    // "**/.settings": true,
   },
 
   // Git
@@ -236,12 +291,21 @@
   "git.autofetch": true,
   "git.openRepositoryInParentFolders": "always",
   "git.statusLimit": 0,
+  "git.confirmSync": false,
+  "git.decorations.enabled": true,
+  "git.confirmForcePush": false,
+  "gitlens.ai.enabled": false,
   "gitlens.hovers.avatars": false,
   "gitlens.hovers.detailsMarkdownFormat": "${author} ${ago}${' via 'pullRequest} &nbsp; _(${date})_ \n\n${message}${\n\n---\n\nfootnotes}\n\n${commands}",
   "gitlens.statusBar.tooltipFormat": "${author} ${ago}${' via 'pullRequest} &nbsp; _(${date})_ \n\n${message}${\n\n---\n\nfootnotes}\n\n${commands}",
   "gitlens.views.contributors.avatars": false,
   "gitlens.views.contributors.files.layout": "tree",
   "gitlens.views.contributors.showAllBranches": true,
+  "gitlens.views.scm.grouped.default": "stashes",
+
+  // Explorer
+  "explorer.decorations.badges": true,
+  "explorer.decorations.colors": true,
 
   // Other
   "glassit.alpha": 235,
@@ -254,7 +318,6 @@
     "jupyter-notebook": "left"
   },
   "notebook.lineNumbers": "on",
-  "path-intellisense.showHiddenFiles": true,
   "php.suggest.basic": false,
   "php.validate.enable": false,
   "prettier.endOfLine": "auto",
@@ -266,7 +329,6 @@
 
   // Terminal
   "terminal.external.windowsExec": "Terminal.app",
-  "terminal.integrated.allowChords": false,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.profiles.windows": {
@@ -278,13 +340,26 @@
   "terminal.integrated.scrollback": 10000,
   "terminal.integrated.shellIntegration.enabled": true,
   "terminal.integrated.tabs.enabled": false,
+  "terminal.integrated.allowChords": false,
+  "terminal.integrated.defaultProfile.linux": "zsh",
 
   // Vim
-  "vim.enableNeovim": false,
+  "vim.sneak": true,
+  "vim.sneakReplacesF": true,
+  "vim.easymotion": true,
+  "vim.enableNeovim": true,
   "vim.foldfix": true,
+  "vim.vimrc.path": "$HOME/init.vim",
   "vim.handleKeys": {
     "<C-c>": false
   },
+  "vim.leader": " ",
+  "vim.mouseSelectionGoesIntoVisualMode": true,
+  "vim.neovimUseConfigFile": false,
+  "vim.shell": "zsh",
+  "vim.timeout": 400,
+  "vim.useSystemClipboard": true,
+  "vim.vimrc.enable": true,
   "vim.insertModeKeyBindings": [
     {
       "after": ["<Esc>"],
@@ -299,10 +374,6 @@
       "before": ["<C-c>"]
     }
   ],
-  "vim.leader": " ",
-  "vim.mouseSelectionGoesIntoVisualMode": true,
-  // "vim.neovimConfigPath": "D:\\config\\nvim\\init.lua",
-  "vim.neovimUseConfigFile": false,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "e"],
@@ -329,11 +400,6 @@
       "commands": ["references-view.findReferences"]
     }
   ],
-  "vim.shell": "C:\\Users\\Admin\\AppData\\Local\\Microsoft\\WindowsApps\\pwsh.exe --nologo",
-  "vim.timeout": 400,
-  "vim.useSystemClipboard": true,
-  "vim.vimrc.enable": true,
-  "vim.vimrc.path": "D:\\Config\\nvim\\init.lua",
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "after": ["\"", "+", "y"],
@@ -353,9 +419,10 @@
     }
   ],
 
-  // Window
-  "window.newWindowProfile": "Default",
+  "workbench.activityBar.compact": true,
   "workbench.activityBar.location": "top",
+  "workbench.experimental.modernUIEditorTabStyle": "pill",
+  "workbench.startupEditor": "none",
   "workbench.colorCustomizations": {
     "activityBar.background": "#1d0c13",
     "activityBar.foreground": "#e67d99",
@@ -474,6 +541,17 @@
     "gitDecoration.stageModifiedResourceForeground": "#c9b290",
     "gitDecoration.submoduleResourceForeground": "#8db9e2",
     "gitDecoration.untrackedResourceForeground": "#9ab893",
+    "gitDecoration.renamedResourceForeground": "#e2c08d",
+    "gitlens.decorations.addedResourceForeground": "#90b496",
+    "gitlens.decorations.conflictingResourceForeground": "#6c6cc4",
+    "gitlens.decorations.deletedResourceForeground": "#c74e39",
+    "gitlens.decorations.ignoredResourceForeground": "#8c8c8c",
+    "gitlens.decorations.modifiedResourceForeground": "#e2c08d",
+    "gitlens.decorations.stageDeletedResourceForeground": "#c74e39",
+    "gitlens.decorations.stageModifiedResourceForeground": "#c9b290",
+    "gitlens.decorations.submoduleResourceForeground": "#8db9e2",
+    "gitlens.decorations.untrackedResourceForeground": "#9ab893",
+    "gitlens.decorations.renamedResourceForeground": "#e2c08d",
     "icon.foreground": "#e67d99",
     "input.background": "#1d0c13",
     "input.border": "#965463",
@@ -488,7 +566,7 @@
     "list.focusBackground": "#2a0610",
     "list.focusForeground": "#cccccc",
     "list.highlightForeground": "#d96a8e",
-    "list.hoverBackground": "#ffffff10",
+    "list.hoverBackground": "#45222e",
     "list.hoverForeground": "#cccccc",
     "list.inactiveSelectionBackground": "#32151e",
     "list.inactiveSelectionForeground": "#cccccc",
@@ -498,8 +576,8 @@
     "menu.background": "#1d0c13",
     "menu.border": "#965463",
     "menu.foreground": "#e2c5d2",
-    "menu.selectionBackground": "#1d0c13",
-    "menu.selectionBorder": "#00000000",
+    "menu.selectionBackground": "#45222e",
+    "menu.selectionBorder": "#965463",
     "menu.selectionForeground": "#ffffff",
     "menu.separatorBackground": "#965463",
     "menubar.selectionBackground": "#f024241a",
@@ -579,11 +657,12 @@
     "statusBarItem.remoteForeground": "#ffffff",
     "tab.activeBackground": "#560f23",
     "tab.activeBorder": "#965463",
+    "tab.activeModifiedBorder": "#965463",
     "tab.activeBorderTop": "#c76a91",
     "tab.activeForeground": "#e2c5d2",
     "tab.border": "#965463",
-    "tab.hoverBackground": "#642130",
     "tab.hoverBorder": "#965463",
+    "tab.hoverBackground": "#642130",
     "tab.hoverForeground": "#e67d99",
     "tab.inactiveBackground": "#1d0c13",
     "tab.inactiveForeground": "#e2c5d2aa",
@@ -620,15 +699,22 @@
     "widget.shadow": "#0000005c"
   },
   "workbench.editorAssociations": {
-    "*.docx": "default",
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.xlsx": "gc-excelviewer-excel-editor",
     "*.ipynb": "jupyter-notebook",
+    "*.docx": "default",
     "*.npy": "default",
-    "*.xlsx": "default"
+    "*.pdf": "default"
   },
   "workbench.settings.applyToAllProfiles": [
     "[html]",
     "[yaml]",
+    "[xml]",
+    "[python]",
+    "black-formatter.args",
+    "isort.args",
     "code-runner.executorMap",
+    "git.confirmSync",
     "code-runner.executorMapByFileExtension",
     "code-runner.ignoreSelection",
     "code-runner.runInTerminal",
@@ -641,6 +727,7 @@
     "editor.cursorSurroundingLines",
     "editor.defaultFormatter",
     "editor.foldingImportsByDefault",
+    "editor.acceptSuggestionOnCommitCharacter",
     "editor.fontFamily",
     "editor.fontSize",
     "editor.formatOnPaste",
@@ -660,6 +747,7 @@
     "editor.suggestSelection",
     "editor.tokenColorCustomizations",
     "editor.wordWrap",
+    "editor.wordWrapColumn",
     "emmet.excludeLanguages",
     "files.associations",
     "files.autoSave",
@@ -669,6 +757,8 @@
     "git.autofetch",
     "git.openRepositoryInParentFolders",
     "git.statusLimit",
+    "git.decorations.enabled",
+    "gitlens.ai.enabled",
     "gitlens.hovers.avatars",
     "gitlens.hovers.detailsMarkdownFormat",
     "gitlens.statusBar.tooltipFormat",
@@ -679,6 +769,7 @@
     "glassit.step",
     "liveServer.settings.donotShowInfoMsg",
     "liveServer.settings.donotVerifyTags",
+    "js/ts.updateImportsOnFileMove.enabled",
     "liveServer.settings.useLocalIp",
     "notebook.cellToolbarLocation",
     "notebook.lineNumbers",
@@ -699,6 +790,9 @@
     "terminal.integrated.scrollback",
     "terminal.integrated.shellIntegration.enabled",
     "terminal.integrated.tabs.enabled",
+    "vim.sneak",
+    "vim.sneakReplacesF",
+    "vim.easymotion",
     "vim.enableNeovim",
     "vim.foldfix",
     "vim.handleKeys",
@@ -716,13 +810,20 @@
     "vim.vimrc.path",
     "vim.visualModeKeyBindingsNonRecursive",
     "window.newWindowProfile",
+    "window.density.layout",
     "workbench.activityBar.location",
     "workbench.colorCustomizations",
     "workbench.editorAssociations",
     "workbench.settings.applyToAllProfiles",
+    "workbench.experimental.modernUIEditorTabStyle",
     "workbench.startupEditor",
+    "workbench.activityBar.compact",
     "zenMode.hideLineNumbers"
   ],
-  "workbench.startupEditor": "none",
+
+  // Windows
+  "window.newWindowProfile": "Default",
+  "window.density.layout": "compact",
+
   "zenMode.hideLineNumbers": false
 }
