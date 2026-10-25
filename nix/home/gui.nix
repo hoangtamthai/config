@@ -8,7 +8,7 @@
   imports = [ ./home.nix ];
   home.packages = with pkgs; [
     # calibre
-    copyq
+    # copyq
     dbeaver-bin
     discord
     # ghostty
@@ -33,19 +33,19 @@
     unstable.piper-tts
     unstable.syncthingtray-minimal
     unstable.vscode
-    unstable.zotero
+    # unstable.zotero
     # unstable.zed-editor
     inputs.ie-r.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
-  i18n.inputMethod = {
-    enable = true;
-    type = "fcitx5";
-    fcitx5.addons = with pkgs; [
-      fcitx5-bamboo
-      kdePackages.fcitx5-configtool
-    ];
-  };
+  # i18n.inputMethod = {
+  #   enable = true;
+  #   type = "fcitx5";
+  #   fcitx5.addons = with pkgs; [
+  #     fcitx5-bamboo
+  #     kdePackages.fcitx5-configtool
+  #   ];
+  # };
   # home.sessionVariables = {
   #   # GTK_IM_MODULE = "fcitx";
   #   # QT_IM_MODULE = "fcitx";

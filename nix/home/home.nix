@@ -195,9 +195,9 @@ in
     };
   };
 
-  services = {
-    copyq.enable = true;
-  };
+  # services = {
+  #   copyq.enable = true;
+  # };
 
   xdg.configFile."mimeapps.list".force = true;
   xdg.mimeApps = {
