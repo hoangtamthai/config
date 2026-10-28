@@ -14,7 +14,7 @@
             "style": "folder"
           },
           "style": "plain",
-          "template": " \ue5ff {{ .Path }}"
+          "template": "{{ .Path }}"
         },
         {
           "type": "root",
@@ -37,13 +37,13 @@
         {
           "type": "python",
           "foreground": "#26547a",
-          "powerline_symbol": "\ue0b0",
+          "powerline_symbol": "py",
           "options": {
             "display_mode": "files",
             "fetch_virtual_env": true
           },
           "style": "plain",
-          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+          "template": " py {{ if .Venv }}({{ .Venv }}) {{ end }}{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         },
         {
           "type": "text",

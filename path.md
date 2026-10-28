@@ -1,12 +1,14 @@
 # Enviroment
 
 %LOCALAPPDATA: ~/AppData/Local/
+%ROAMING%: ~/AppData/Roaming
 
 # Application
 
 - .gitconfig: ~/.gitconfig
 - alarcritty: %LOCALAPPDATA%/alarcritty
 - chrome: Firefox profile (see at about:support)
+- eza: %ROAMING%/eza
 - komorebi.ps1: ~/komorebi.ps1
 - lf: %LOCALAPPDATA%/lf/
 - nvim: ~/AppData/Local/nvim/

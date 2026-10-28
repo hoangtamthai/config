@@ -3,13 +3,18 @@ Set-Alias grep rg
 Set-Alias g git
 Set-Alias touch New-Item
 Set-Alias which where.exe
+Set-Alias vi nvim
 
 function li {eza -A -G --icons --group-directories-first}
 function la {eza -lah --icons --group-directories-first}
 function ll {eza -l --icons --group-directories-first}
 
-function ln ($target, $link) {
-    New-Item -ItemType SymbolicLink -Path $link -Value $target
+function lnj ($target, $link) {
+    New-Item -ItemType Junction -Path $link -Value $target
+}
+
+function lnh ($target, $link) {
+    New-Item -ItemType HardLink -Path $link -Value $target
 }
 
 function rename ($target, $link) {

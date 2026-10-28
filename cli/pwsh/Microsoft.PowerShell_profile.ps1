@@ -25,9 +25,6 @@ Set-PSReadLineOption -Colors @{
 }
 $PSStyle.FileInfo.Directory ="`e[91m"
 
-.$env:USERPROFILE\Documents\PowerShell\user_profile.ps1
+.$env:USERPROFILE\"OneDrive - 360 Treasury Systems AG"\Documents\PowerShell\user_profile.ps1
 
-. ([ScriptBlock]::Create((& scoop-search --hook | Out-String)))
-
-oh-my-posh init pwsh --config D:\config\ohmyposh\rose-quartz.json | Invoke-Expression
-
+oh-my-posh init pwsh --config C:\Users\TamHoang\tam\config\cli\ohmyposh\rose-quartz.json | Invoke-Expression
