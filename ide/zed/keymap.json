@@ -97,7 +97,8 @@
   {
     "context": "(VimControl && !menu)",
     "bindings": {
-      "g r": "editor::FindAllReferences"
+      "g r": "editor::FindAllReferences",
+      "g i": "editor::GoToImplementation"
     }
   },
   {
@@ -178,6 +179,18 @@
   {
     "bindings": {
       "ctrl-m": "debug_panel::Toggle"
+    }
+  },
+  {
+    "context": "Editor && mode == full",
+    "bindings": {
+      "alt-z": "editor::ToggleSoftWrap"
+    }
+  },
+  {
+    "context": "Editor && mode == full",
+    "unbind": {
+      "ctrl-k z": "editor::ToggleSoftWrap"
     }
   }
 ]
