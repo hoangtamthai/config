@@ -15,6 +15,12 @@
 - pwsh: ~/Documents/PowerShell/ (script when open setting page in PowerShell)
 - whkd: ~/.config/whkd
 
+# IDE
+
+- vscode: %ROAMING%/Code/User/settings.json
+- zed: %ROAMING%/Zed/settings.json
+- pycharm: Import settings
+
 # Browser Extension
 
 - vimium-options: on vimium browser extension
