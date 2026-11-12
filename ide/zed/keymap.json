@@ -144,12 +144,6 @@
   },
   {
     "context": "Workspace",
-    "bindings": {
-      "alt-d": "debugger::Rerun"
-    }
-  },
-  {
-    "context": "Workspace",
     "unbind": {
       "f5": "debugger::Rerun"
     }
@@ -178,7 +172,7 @@
   },
   {
     "bindings": {
-      "ctrl-m": "debug_panel::Toggle"
+      "ctrl-y": "debug_panel::Toggle"
     }
   },
   {
@@ -191,6 +185,28 @@
     "context": "Editor && mode == full",
     "unbind": {
       "ctrl-k z": "editor::ToggleSoftWrap"
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "alt-d": [
+        "task::Spawn",
+        {
+          "reveal_target": "center"
+        }
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "alt-shift-r": [
+        "task::Spawn",
+        {
+          "reveal_target": "center"
+        }
+      ]
     }
   }
 ]
